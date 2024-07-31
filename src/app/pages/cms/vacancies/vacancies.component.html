@@ -1,0 +1,162 @@
+<div class="main-con overflow-auto">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1">
+        <button type="button" class="btn btn-secondary" (click)="AddVacancy()">
+          <i class="bi bi-plus"> </i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <table class="table align-middle mb-0 bg-white mt-2 overflow-auto">
+    <thead class="bg-light">
+      <tr>
+        <th>Vacancy</th>
+        <th>Position</th>
+        <th>Description</th>
+        <th>Location</th>
+        <th class="text-nowrap">Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Warehouse</td>
+        <td>Warehouse Manager</td>
+        <td>
+          <p class="fw-normal mb-1 text-wrap overflow-auto">
+            Masdar and Bee’ah jointly developed the first Waste-to-Energy plant
+            in the United Arab Emirates.
+            <a
+              data-bs-toggle="modal"
+              data-bs-target="#descriptionModal"
+              class="btn btn-link btn-sm btn-rounded"
+              >Read More</a
+            >
+          </p>
+          <!--<p class="text-muted mb-0">IT department</p>-->
+        </td>
+        <!--<td>
+            <span class="badge badge-success rounded-pill d-inline">Active</span>
+          </td>-->
+        <td>Lebanon</td>
+        <td>26/12/2023</td>
+        <td>
+          <button type="button" class="btn btn-link btn-sm btn-rounded">
+            Edit
+          </button>
+        </td>
+      </tr>
+      <!--<tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <img
+                src="https://mdbootstrap.com/img/new/avatars/6.jpg"
+                class="rounded-circle"
+                alt=""
+                style="width: 45px; height: 45px"
+              />
+              <div class="ms-3">
+                <p class="fw-bold mb-1">Alex Ray</p>
+                <p class="text-muted mb-0">alex.ray@gmail.com</p>
+              </div>
+            </div>
+          </td>
+          <td>
+            <p class="fw-normal mb-1">Consultant</p>
+            <p class="text-muted mb-0">Finance</p>
+          </td>
+          <td>
+            <span class="badge badge-primary rounded-pill d-inline"
+              >Onboarding</span
+            >
+          </td>
+          <td>Junior</td>
+          <td>
+            <button
+              type="button"
+              class="btn btn-link btn-rounded btn-sm fw-bold"
+              mdbRipple
+              rippleColor="dark"
+            >
+              Edit
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <img
+                src="https://mdbootstrap.com/img/new/avatars/7.jpg"
+                class="rounded-circle"
+                alt=""
+                style="width: 45px; height: 45px"
+              />
+              <div class="ms-3">
+                <p class="fw-bold mb-1">Kate Hunington</p>
+                <p class="text-muted mb-0">kate.hunington@gmail.com</p>
+              </div>
+            </div>
+          </td>
+          <td>
+            <p class="fw-normal mb-1">Designer</p>
+            <p class="text-muted mb-0">UI/UX</p>
+          </td>
+          <td>
+            <span class="badge badge-warning rounded-pill d-inline"
+              >Awaiting</span
+            >
+          </td>
+          <td>Senior</td>
+          <td>
+            <button
+              type="button"
+              class="btn btn-link btn-rounded btn-sm fw-bold"
+              mdbRipple
+              rippleColor="dark"
+            >
+              Edit
+            </button>
+          </td>
+        </tr>-->
+    </tbody>
+  </table>
+</div>
+
+<!-- Large modal -->
+<section>
+  <div
+    class="modal fade bd-example-modal-xl"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="myLargeModalLabel"
+    aria-hidden="true"
+    id="descriptionModal"
+  >
+    <div class="modal-dialog modal-xl modal-dialog-centered mw-100 w-50">
+      <div class="modal-content">
+        <h1>Sharjah Waste to Energy Company</h1>
+        <p>
+          Masdar and Bee’ah jointly developed the first Waste-to-Energy plant in
+          the United Arab Emirates. The plant’s power generation capacity is
+          circa 30MW and aims to divert more than 300,000 tonnes of solid waste
+          from landfill each year. This project is the first of its kind in the
+          UAE. The waste incineration process converts waste into heat which is
+          then used to produce steam and which in turn is used to drive a
+          turbine and generator block. On the other hand, there are 2 main
+          by-products of the process: (i) bottom ash which is fully recovered
+          and transported using into a safe storage area before being exported
+          for use by other industries (ii) flue gas which after being treated by
+          a cutting-edge treatment process is released into the air free from
+          any element that could harm the environment. In summary, this plant is
+          impressive due to its ability to transform waste that would normally
+          emit methane and contribute to global warming, into an
+          energy-producing fuel that frees up land, generates power, and
+          minimizes carbon emissions all while creating a usable by-product.
+          BUTEC executed the civil works of the entire site and the construction
+          of all buildings
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

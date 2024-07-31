@@ -1,0 +1,19 @@
+/* main-content */
+.main-con {
+  margin-left: 320px;
+
+  margin-top: 80px;
+  padding: 10px 18px;
+  transition: margin-left 0.5s;
+}
+/* main-content */
+@media screen and (max-width: 500px) {
+  .main-con {
+    margin-left: 0px;
+
+    margin-top: 80px;
+    padding: 10px 18px;
+    transition: margin-left 0.5s;
+    /* overflow-y: auto; */
+  }
+}

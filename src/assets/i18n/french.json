@@ -1,0 +1,785 @@
+{
+  "numbers": {
+    "1": "1.",
+    "2": "2.",
+    "3": "3.",
+    "4": "4.",
+    "5": "5.",
+    "6": "6.",
+    "7": "7.",
+    "8": "8."
+  },
+
+  "letters": {
+    "a": "a.",
+    "b": "b."
+  },
+
+  "buttons": {
+    "browseAll": "Afficher plus",
+    "learnMore": "En savoir plus",
+    "workWithUs": "Rejoignez-nous",
+    "butecAcademy": "BUTEC ACADAMY",
+    "browsePositions": "Découvrez nos offres d'emploi",
+    "letsDiscuss": "DISCUTONS-EN.",
+    "giveFeedback": "Votre avis",
+    "showMore": "EN SAVOIR PLUS",
+    "showLess": "Afficher moins",
+    "readMore": "EN SAVOIR PLUS",
+    "moreAboutTheButecAcademy": "En savoir plus sur BUTEC Academy",
+    "checkOpenPositions": "Vérifiez comment postuler",
+    "applyNow": "POSTULEZ",
+    "viewMoreBranches": "Voir tout",
+    "viewLessBranches": "Voir moins",
+    "submitMessage": "SOUMETTRE"
+  },
+
+  "filters": {
+    "filterByExpertise": "Filtrer par Métier",
+    "projects": {
+      "allProjects": "Tous les projets",
+      "engineeringAnd": "Engineering and Contracting",
+      "electroMechanicalSolutions": "Electro-Mechanical Solutions",
+      "facilityServices": "Facility Services",
+      "utilityServices": "Utility Services"
+    }
+  },
+
+  "languages": {
+    "english": "English",
+    "french": "French",
+    "arabic": "Arabic"
+  },
+
+  "header": {
+    "areasOfExpertise": {
+      "areasOfExpertise": "Nos métiers",
+      "engineeringAndContracting": "Engineering & Contracting",
+      "electroMechanicalSolutions": "Electro-Mechanical Solutions",
+      "facilityServices": "Facility Services",
+      "utilityServices": "Utility Services"
+    },
+    "projects": "Projets",
+    "about": {
+      "about": "Groupe",
+      "leadership": "Fondations BUTEC",
+      "theStory": "Notre histoire",
+      "whyChooseUs": "Pourquoi choisir BUTEC"
+    },
+    "news": "Actualités",
+    "careers": {
+      "careers": "Carrières",
+      "lifeAtButec": "La vie chez BUTEC",
+      "butecAcademy": "BUTEC Academy",
+      "openPositions": "Postulez"
+    },
+    "contact": "Contact"
+  },
+
+  "footer": {
+    "areasOfExpertise": "Nos métiers",
+    "engineeringAndContracting": "Engineering and Contracting",
+    "electroMechanicalSolutions": "Electro-Mechanical Solutions",
+    "facilityServices": "Facility Services",
+    "utilityServices": "Utility Services",
+    "projects": "Projets",
+    "company": "Company",
+    "leadership": "Fondations BUTEC",
+    "theStory": "Notre histoire",
+    "whyChooseUs": "Pourquoi choisir BUTEC",
+    "esg": "GSE (Gouvernance, Social, Environnement)",
+    "news": "Actualités",
+    "contact": "Contact",
+    "careers": "Carrières",
+    "lifeAtButec": "La vie chez BUTEC",
+    "butecAcademy": "BUTEC Academy",
+    "openPositions": "Postulez",
+    "privacy": "Confidentialité",
+    "privacyPolicy": "Politique de confidentialité",
+    "cookiePolicy": "Politique en matière de cookies",
+    "termsAndConditions": "Condition générales d'utilisation",
+    "rights": "© 2024 BUTEC. Tous droits résérvés"
+  },
+
+  "home": {
+    "areasOfExpertiseCircles": {
+      "quote": "Notre expérience éprouvée et notre expertise diversifiée font de nous votre partenaire de choix pour une multitude de besoins.",
+      "engineeringAnd": "ENGINEERING AND",
+      "contracting": "CONTRACTING",
+      "electroMechanical": "ELECTRO-MECHANICAL",
+      "Solutions": "SOLUTIONS",
+      "facilityServices": "FACILITY SERVICES",
+      "utilityServices": "UTILITY SERVICES"
+    },
+    "performanceSection": {
+      "performanceInNumbers": "Notre succès en quelques chiffres",
+      "description1": "Depuis ses débuts, BUTEC s'est développé à travers une longue série de résultats mesurables",
+      "description2": "et de réalisations concrètes, qui témoignent de notre histoire.",
+      "boxes": {
+        "years": "ans d'excellence",
+        "countries1": "pays",
+        "countries2": "",
+        "dedicated": "Collaborateurs engagés",
+        "nationalities": "nationalités représentées"
+      }
+    },
+    "projectsSection": {
+      "projects": "Projets",
+      "description": "Découvrez un aperçu de nos projets significatifs."
+    },
+    "clientsSection": {
+      "trustedBy": "Confiés par les leaders de l'industrie, nos clients de valeur incluent…"
+    },
+    "enviromentalSection": {
+      "enviromental": "Environnement, Social, Gouvernance",
+      "diversity": "",
+      "diversityDescription": "Avec une présence dans plus de 21 pays, notre collaboration avec les gouvernements et les entreprises locales nous a permis de comprendre l’ampleur de l'impact que nous pouvons avoir au-delà de nos compétences de base. Nous avons saisi où et comment nous pouvons réellement faire une différence en redonnant aux communautés que nous servons et en enrichissant leur vie dans divers domaines. De la défense des causes environnementales à la promotion des initiatives éducatives, nous relevons les défis uniques rencontrés par chaque communauté que nous servons. Au fil des ans, nous avons lancé plus de 100 programmes, touchant la vie de milliers de personnes et favorisant un changement positif. Pourtant, notre parcours est loin d'être terminé – nous nous engageons à poursuivre dans cette voie de changement significatif où que nous soyons.",
+      "monitoring": "",
+      "monitoringDescription1": "",
+      "monitoringDescription2": "",
+      "sustainability": "",
+      "sustainabilityDescription1": "",
+      "sustainabilityDescription2": ""
+    },
+    "reachSection": {
+      "reach1": "Notre rayonnement",
+      "reach2": "se poursuit.",
+      "description": "Avec des sièges à Dubaï et à Beyrouth, nous avons étendu nos activités à 21 pays à travers le Moyen-Orient et l'Afrique, où nous offrons notre expertise complète."
+    },
+    "joinSection": {
+      "join": "Rejoignez BUTEC. Grandissons ensemble.",
+      "description0": "Chez BUTEC, nous encourageons l’épanouissement professionnel",
+      "description1": "et les carrières évolutives de nos collaborateurs.",
+      "description2": "Au cœur de notre entreprise, nous valorisons les talents exceptionnels",
+      "description3": "partageant notre passion pour relever les défis",
+      "description4": "et proposer des solutions innovantes/façonner un avenir meilleur.",
+      "description5": "",
+      "description6": "",
+      "description7": "",
+      "description8": "",
+      "description9": "",
+      "descriptionMobile": "Rejoignez BUTEC. Grandissons ensemble. Chez BUTEC, nous encourageons l’épanouissement professionnel et les carrières évolutives de nos collaborateurs. Au cœur de notre entreprise, nous valorisons les talents exceptionnels partageant notre passion pour relever les défis et proposer des solutions innovantes/façonner un avenir meilleur."
+    },
+    "contactSection": {
+      "discuss": "Comment pouvons-nous vous assister?",
+      "feedback": "Votre avis nous intéresse. N’hésitez pas à nous faire part de vos commentaires."
+    }
+  },
+
+ "expertise": {
+    "areasOfExpertise": "Area of Expertise",
+    "projects": "Projects",
+    "boxes": {
+      "engineeringAndContractingBox1": {
+        "Id": "7",
+        "boxUsed": "1",
+        "boxNumber": "9.5",
+        "boxText": "d'heures-homme en ingénierie multitrades",
+        "class1": "mini-box-title",
+        "class2": "mini-box-text",
+        "style": "normal normal bold 32px/40px Bw Gradual",
+        "suffix": "M+"
+      },
+      "engineeringAndContractingBox2": {
+        "Id": "7",
+        "boxUsed": "1",
+        "boxNumber": "60",
+        "boxText": "pays couverts par notre réseau mondial de fournisseurs",
+        "class1": "mini-box-title",
+        "class2": "mini-box-text",
+        "style": "normal normal bold 32px/40px Bw Gradual",
+        "suffix": "+"
+      },
+      "engineeringAndContractingBox3": {
+        "Id": "7",
+        "boxUsed": "1",
+        "boxNumber": "200",
+        "boxText": "d'heures-homme en construction",
+        "class1": "mini-box-title",
+        "class2": "mini-box-text",
+        "style": "normal normal bold 32px/40px Bw Gradual",
+        "suffix": "M+"
+      },
+      "engineeringAndContractingBox4": {
+        "Id": "7",
+        "boxUsed": "1",
+        "boxNumber": "250",
+        "boxText": "en ingénierie de la valeur",
+        "class1": "mini-box-title",
+        "class2": "mini-box-text",
+        "style": "normal normal bold 32px/40px Bw Gradual",
+        "suffix": "MUSD+"
+      },
+      "electroMechanicalBox1": {
+        "Id": "6",
+        "boxUsed": "1",
+        "boxNumber": "5000",
+        "boxText": "de lignes électriques installées",
+        "class1": "mini-box-title",
+        "class2": "mini-box-text",
+        "style": "normal normal bold 32px/40px Bw Gradual",
+        "suffix": "KM+"
+      },
+      "electroMechanicalBox2": {
+        "Id": "6",
+        "boxUsed": "1",
+        "boxNumber": "1500",
+        "boxText": "de Puissance électriques installées",
+        "class1": "mini-box-title",
+        "class2": "mini-box-text",
+        "style": "normal normal bold 32px/40px Bw Gradual",
+        "suffix": "MW+"
+      },
+      "electroMechanicalBox3": {
+        "Id": "6",
+        "boxUsed": "1",
+        "boxNumber": "350",
+        "boxText": "sites industriels réalisés en électricité industrielle, automatisme et instrumentation",
+        "class1": "mini-box-title",
+        "class2": "mini-box-text-EMS",
+        "style": "normal normal bold 32px/40px Bw Gradual",
+        "suffix": "+"
+      },
+      "electroMechanicalBox4": {
+        "Id": "6",
+        "boxUsed": "1",
+        "boxNumber": "2000",
+        "boxText": "de bâtiments tertiaires équipés",
+        "class1": "mini-box-title",
+        "class2": "mini-box-text",
+        "style": "normal normal bold 32px/40px Bw Gradual",
+        "suffix": "KM²"
+      },
+      "facilityServicesBox1": {
+        "Id": "9",
+        "boxUsed": "1",
+        "boxNumber": "1200",
+        "boxText": "sites",
+        "class1": "mini-box-title",
+        "class2": "mini-box-text",
+        "style": "normal normal bold 32px/40px Bw Gradual",
+        "suffix": "+"
+      },
+      "facilityServicesBox2": {
+        "Id": "9",
+        "boxUsed": "1",
+        "boxNumber": "900",
+        "boxText": "clients servis",
+        "class1": "mini-box-title",
+        "class2": "mini-box-text",
+        "style": "normal normal bold 32px/40px Bw Gradual",
+        "suffix": "+"
+      },
+      "facilityServicesBox3": {
+        "Id": "9",
+        "boxUsed": "1",
+        "boxNumber": "110",
+        "boxText": "villes couvertes",
+        "class1": "mini-box-title",
+        "class2": "mini-box-text",
+        "style": "normal normal bold 32px/40px Bw Gradual",
+        "suffix": "+"
+      },
+      "facilityServicesBox4": {
+        "Id": "9",
+        "boxUsed": "1",
+        "boxNumber": "800",
+        "boxText": "techniciens",
+        "class1": "mini-box-title",
+        "class2": "mini-box-text",
+        "style": "normal normal bold 32px/40px Bw Gradual",
+        "suffix": "+"
+      },
+      "utilityServicesBox1": {
+        "Id": "12",
+        "boxUsed": "1",
+        "boxNumber": "50",
+        "boxText": "de réduction des pertes dans le réseau",
+        "class1": "mini-box-title",
+        "class2": "mini-box-text",
+        "style": "normal normal bold 32px/40px Bw Gradual",
+        "suffix": "%"
+      },
+      "utilityServicesBox2": {
+        "Id": "12",
+        "boxUsed": "1",
+        "boxNumber": "90",
+        "boxText": "des réparations de pannes électriques effectuées le jour même",
+        "class1": "mini-box-title",
+        "class2": "mini-box-text",
+        "style": "normal normal bold 32px/40px Bw Gradual",
+        "suffix": "%"
+      },
+      "utilityServicesBox3": {
+        "Id": "12",
+        "boxUsed": "1",
+        "boxNumber": "12",
+        "boxText": "M³ d'eau économisés annuellement",
+        "class1": "mini-box-title",
+        "class2": "mini-box-text",
+        "style": "normal normal bold 32px/40px Bw Gradual",
+        "suffix": "KM"
+      },
+      "utilityServicesBox4": {
+        "Id": "12",
+        "boxUsed": "1",
+        "boxNumber": "435000",
+        "boxText": "M³/jour d'eaux usées traitées",
+        "class1": "mini-box-title",
+        "class2": "mini-box-text",
+        "style": "normal normal bold 32px/40px Bw Gradual",
+        "suffix": ""
+      }
+    }
+  },
+
+
+  "projects": {
+    "projects": "Projets",
+    "description": "Découvrez davantage l’étendue de notre expertise à travers un aperçu de nos projets diversifiés, chacun mettant en avant notre approche axée sur les solutions qui nous a permis de poser une référence au sein de l'industrie."
+  },
+
+  "projectDetails": {
+    "projects": "PROJETS",
+    "areaOfExpertise": "Nos métiers",
+    "roleOfButec": "Role of BUTEC",
+    "contractorForProcess": "Contractor for Process",
+    "executionPeriod": "Execution Period",
+    "financing": "Financing",
+    "employer": "Employer",
+    "delgatedEmployer": "Delegated Employer",
+    "location": "Lieu",
+    "year": "Year",
+    "investor": "Investor",
+    "consultant": "Consultant",
+    "value": "Value",
+    "client": "Client",
+    "owner": "Owner",
+    "otherProjects": "Other projects"
+  },
+
+  "leadership": {
+    "about": "Groupe",
+    "leadership": "Fondations BUTEC",
+    "founderTitle": "Message de notre fondateur",
+    "founderDescription1": "BUTEC, established over 60 years ago, has overcome challenges such as Lebanon’s civil war and current regional turmoil. Passing the leadership to Chairman Ziad Younes, I am confident in the company’s continued success. My focus now turns to Lebanon’s societal unity and the pursuit of a democratic civil state. Despite the difficulty of leaving my cherished career, I am compelled to contribute to national issues. I encourage your commitment to values and ethics, emphasising the significance of your achievements in Lebanon’s struggle. I remain devoted to your endeavours and the vision of an “Other Lebanon.”",
+    "founderDescription2": "Dr. Nizar Younes",
+    "founderSignature": "fondateur",
+    "chairmanTitle": "Message de notre président",
+    "chairmanDescription1": "BUTEC, or “Bureau Technique d’Etudes et de Construction,” began as an innovative EPC contractor over 60 years ago. The company values the potential of its workforce, emphasizing innovation and improvement. Committed to fulfilling contractual obligations globally, BUTEC combines the cost structure of a local contractor with the technical expertise of an international one. Despite its growth, the company has preserved a family- oriented culture. As chairman since 2015, I am proud of our achievements and look forward to the next phase of growth. In these uncertain times, preserving BUTEC’s tradition of dynamic yet careful movement is crucial for continued success. I rely on each team member to contribute to the exciting journey ahead.",
+    "chairmanDescription2": "Ziad Younes",
+    "chairmanSignature": "président",
+    "goveringTeam": "L' équipe",
+    "ourCommitments": "Notre engagement englobe: ",
+    "integratedManagementSystem": "Le système de management Intégré",
+    "managementDescription": "Le système de management intégré (SMI) de BUTEC fusionne les trois systèmes distincts, à savoir la gestion de la qualité, de l'environnement et de la santé et sécurité au travail au sein de l'entreprise, ce qui réduit la bureaucratie et garantit une efficacité accrue. Le SMI définit la manière dont les activités de l'entreprise sont menées et assure la mise en place des procédures et de la documentation nécessaire pour répondre aux critères de certification accordée à BUTEC en matière de systèmes de management de la qualité (ISO 9001), de systèmes de management environnemental (ISO 14001) et de la série de normes relatives au management de la santé et de la sécurité au travail (ISO 45001).",
+    "quality": "La qualité, la santé, la sécurité et l'environnement",
+    "qualityDescription": "Le succès et la croissance de BUTEC découlent directement de l’importance accordée par l'entreprise à la qualité à l'échelle de toutes ses activités. BUTEC s'engage à protéger l'environnement sur les sites de ses projets tout en plaçant la santé et la sécurité de sa main-d’œuvre au même niveau de priorité. Cet engagement se traduit par l'allocation régulière des ressources nécessaires pour réduire les risques ou les dangers potentiels, tout en veillant au bien-être de toutes les parties prenantes, qu’il s’agisse des fournisseurs, des clients, des superviseurs ou d’autres parties concernées. Bien que la nature diversifiée des projets entrepris impose des exigences variées en matière de qualité, de santé, de sécurité et d'environnement (QSSE), BUTEC relève le défi en s'adaptant avec succès aux besoins de chaque projet, comme en témoignent les différentes certifications de l'entreprise. Ces objectifs sont atteints avec succès, tout en réalisant une croissance durable.",
+    "diversity": "La diversité",
+    "diversityDescription": "BUTEC cultive un environnement professionnel axé sur la croissance, visant à favoriser à la fois le succès personnel et la satisfaction au travail. Chez BUTEC, la diversité et l'inclusion sont des piliers fondamentaux de notre philosophie d'entreprise. Nous sommes convaincus de l’importance du recrutement et de la fidélisation des talents issus de cultures et d'horizons variés, tout en promouvant un environnement de travail positif, éthique et solidaire, conformément à nos codes de conduite et d'éthique. Nous valorisons nos collaborateurs, favorisons leur développement et veillons à ce qu’ils aient des chances égales de réussite, dans la dignité et le respect. La diversité est au cœur de la culture d’entreprise de BUTEC. Ainsi, les employés sont encouragés à partager leur passion, leurs compétences et leurs idées. Cette passion partagée est en fin de compte un gage de succès dans notre secteur d’activité. La diversité est une composante essentielle pour construire une culture d’entreprise gagnante et engageante, où chaque employé peut exprimer son plein potentiel.",
+    "sustainability": "Le développement durable",
+    "sustainabilityDescription": "Chez BUTEC, nous sommes engagés dans la surveillance continue de nos processus et de nos opérations afin de garantir le respect permanent des normes en matière de santé, de sécurité, d'environnement et de qualité, ainsi que des évolutions réglementaires. Nous croyons en l'importance d'adopter des pratiques commerciales durables, en établissant des normes élevées en matière de santé et de sécurité, en contribuant à l'amélioration de l'environnement et en visant un niveau élevé de satisfaction client, tout en nous conformant aux normes ISO en vigueur.",
+    "socialResponsibilties": "Responsabilité sociale",
+    "socialResponsibiltiesDescription": "BUTEC couvre activement plus de 21 pays dans la région du MENA et de l’Afrique. Notre étroite collaboration avec les gouvernements et les entreprises locales nous a permis de prendre conscience de l'impact profond que nous pouvons avoir au-delà de nos compétences principales. Nous avons identifié où et comment nous pouvons réellement faire la différence en contribuant au bien-être des communautés que nous servons et en enrichissant leur vie à travers divers secteurs. De la promotion des causes environnementales à la mise en œuvre d'initiatives éducatives, nous relevons les défis spécifiques auxquels chaque communauté est confrontée. Au fil des années, nous avons lancé plus de 100 programmes qui ont touché la vie de milliers de personnes et ont favorisé un changement positif. Pourtant, notre parcours est loin d’être achevé : nous nous engageons à poursuivre cette voie de changement significatif, où que nous soyons."
+  },
+
+  "story": {
+    "about": "Groupe",
+    "theStory": "L' Histoire",
+    "journeyDescription1": "Notre aventure a commencé à Beyrouth en 1964, et depuis le début, BUTEC a évolué d'une compagnie locale d'ingénierie en un groupe régional prestigieux, spécialisé dans quatre domaines d’expertise qui se complètent : L’Ingénierie et la Construction, les Solutions Électromécaniques, les Services de gestion des installations et les Services d’utilité publique. ",
+    "journeyDescription2": "",
+    "journeyDescription3": "",
+    "journeyDescription4": "",
+    "journeyDescription5": "",
+    "structureDescription1": "Notre structure actionnariale, combinant propriété entrepreneuriale et institutionnelle (par l'IFC, membre du Groupe de la Banque Mondiale), offre à notre entreprise une organisation unique, dynamique et réactive, répondant aux normes de gouvernance les plus élevées. Les secteurs public et privé peuvent bénéficier des solutions complètes de BUTEC dans les secteurs de l'énergie, de l'eau, de l'environnement, du oil & gaz, de l'infrastructure et des projets industriels diversifiés.",
+    "structureDescription2": "",
+    "structureDescription3": "",
+    "sectorsDescription": "Ces solutions innovantes reposent sur les technologies de pointe que nos équipes ont acquises et développées au fil des années, et qui sont enrichies dans notre Bureau Technique et par nos différentes équipes. Tout au long du processus et lors de la mise en œuvre de nos solutions, nous nous engageons fermement à respecter les meilleures pratiques commerciales, le respect de l'environnement, les mesures de santé et de sécurité, ainsi que l'éthique envers toutes les parties prenantes.",
+    "geographicalDescription": "",
+    "operationDescription": "Opérant depuis nos sièges à Beyrouth et Dubaï, BUTEC étend son influence à 21 pays à travers le Moyen-Orient et l'Afrique. Dans cette empreinte géographique diversifiée, notre plus grand atout reste nos 7,500 collaborateurs multiculturels, compétents, dévoués et professionnels, qui incarnent la riche culture de notre Groupe. Une partie de notre succès dans cet environnement technique et géographiquement diversifié réside dans l'engagement de l'entreprise à construire des relations solides avec des partenaires locaux et internationaux renommés, basées sur la loyauté et le professionnalisme. Nous nous efforçons continuellement de maintenir leur confiance grâce à notre expertise et à des complémentarités fructueuses.",
+    "operationDescription2": " Depuis le début, BUTEC est animé par l'adaptabilité, la diversité, la résilience et l'innovation, avec un objectif clair en vue : Créer un avenir meilleur dans tout ce que nous entreprenons.",
+    "operationDescription3": "",
+    "operationDescription4": "Créer un avenir meilleur dans tout ce que nous entreprenons.",
+    "operationDescription5": "",
+    "relationshipsDescription": "",
+    "futureDescription1": "",
+    "futureDescription2": "",
+    "milestones": "Milestones",
+    "1964": "1964",
+    "companyFounded": "Fondation de BUTEC",
+    "founded": "en tant qu'entrepreneur EPC",
+    "inLebanon": "au Liban",
+    "1980": "1980",
+    "establishmentOfThe": "Etablissement",
+    "dubaiBranch": "à Dubai",
+    "branch": "",
+    "1982": "1982",
+    "saudiBranch": "à Arabie Saoudite",
+    "2005": "2005",
+    "algeriaBranch": "en Algérie",
+    "2006": "2006",
+    "qatarBranch": "au Qatar",
+    "2007": "2007",
+    "abuDhabiBranch": "à Abou Dhabi",
+    "2008": "2008",
+    "interationalFinance": "La Société financière internationale (SFI), membre du Groupe de la Banque mondiale, ",
+    "equityPartner": "acquiert 16,67 %",
+    "inButecGroup": "du Groupe BUTEC.",
+    "2010": "2010",
+    "jordanBranch": "en Jordanie",
+    "2011": "2011",
+    "diversificationInto": "Diversification dans l'expertise des",
+    "utilityServices": "SERVICES D'UTILITE PUBLIQUE",
+    "edl": "avec notre premier contrat de distribution d'électricité pour EDL au Liban.",
+    "2021": "2021",
+    "newHeadquarter": "Inauguration du nouveau siège social",
+    "ivoryCoastBranch": "en Côte d'Ivoire",
+    "2022": "2022",
+    "electroMechanicalSolutions": "Diversification dans les SOLUTIONS ELECTROMECANIQUES ",
+    "and": "et les",
+    "facilityServices": "SERVICES DE GESTION DES INSTALLATIONS",
+    "companiesInAfrica": " avec l'acquisition de 17 sociétés spécialisées d'Engie en Afrique",
+    "2024": "2024",
+    "strenghtening": "Extension de notre expertise dans les ",
+    "WaterEfficiency": "avec l'acquisition des Eaux de Marseille Maroc"
+  },
+
+  "whyChooseUs": {
+    "about": "Groupe",
+    "whyChooseUs": "Pourquoi opter pour BUTEC",
+    "mission": "Mission",
+    "missionDescription": "Notre mission consiste à inspirer et à façonner positivement l'avenir à travers des solutions durables et innovantes.",
+    "vision": "Vision",
+    "visionDescription": "Nous nous engageons à maintenir notre offre de solutions clés en main, innovantes, durables et fiables à nos clients, tout en offrant à nos collaborateurs des opportunités de carrières enrichissantes et en améliorant les communautés où nous sommes présents.",
+    "values": {
+      "values": "values",
+      "businessIntegrity": "Business Integrity",
+      "unityOfPurpose": "Unity of purpose",
+      "timeCommitment": "Time Commitment",
+      "efficiencyFocus": "Efficiency Focus",
+      "customerPartnership": "Customer Partnership"
+    },
+    "certifications": "Certifications",
+    "partners": "Partenaires"
+  },
+
+  "news": {
+    "news": "Actualités",
+    "description": "Nous faisons la une grâce à nos réalisations d’entreprise et à notre vision novatrice de l’industrie."
+  },
+
+  "newsDetails": {
+    "news": "News",
+    "otherNews": "Other news"
+  },
+
+  "lifeAtButec": {
+    "careers": "Carrières",
+    "lifeAtButec": "La vie chez BUTEC",
+    "lifeDescription": "Chez BUTEC, notre expansion repose sur la croissance dynamique et l’évolution professionnelle de nos collaborateurs. Nous valorisons les talents exceptionnels qui partagent notre passion pour relever les défis et créer des solutions efficaces. De par la nature de notre activité, nous sommes exposés à différents marchés. Nous nous adaptons constamment aux évolutions, cultivons notre polyvalence et tirons des enseignements précieux de la variété de nos projets.",
+    "ourPeople": "Nos collaborateurs",
+    "ourPeopleDescription": "BUTEC rassemble un effectif de 7,500 professionnels dévoués répartis dans 21 pays. Notre culture d'entreprise repose  sur la fidélité, le travail d'équipe et un engagement constant envers l'excellence.",
+    "diversityAndInclusion": "Diversité et inclusion",
+    "diversityDescription": "Chez BUTEC, nous plaçons la diversité et l’inclusion au cœur de notre identité. Notre environnement inclusif célèbre les cultures et croyances dans leurs différences, reconnaissant que la diversité stimule la créativité, enrichit notre milieu de travail et conduit à de plus grandes réalisations.",
+    "corporateCulture": "Culture d'entreprise",
+    "corporateDescription": "Dès le premier jour, nous intégrons les nouveaux collaborateurs à notre culture et à nos valeurs fondamentales, leur inculquant ainsi un engagement envers l'excellence. Notre priorité est le développement professionnel en offrant des défis stimulants, une exposition accrue et la fourniture d'outils nécessaires pour un apprentissage continu. Investir dans le développement de nos collaborateurs est l’essence même de notre réussite.",
+    "careerDevelopment": "Développement de carrières",
+    "careerDescription": "En accord avec notre engagement envers l'excellence, BUTEC investit dans le capital humain en fournissant les outils essentiels pour optimiser l'apprentissage et la croissance. Nos employés bénéficient de défis stimulants et d'expositions qui élargissent leurs connaissances et améliorent leur expertise. Nous croyons fermement que investir dans le développement des individus est la clé de notre réussite.",
+    "ourEmployeeValueProposition": "Notre proposition de valeur pour les employés",
+    "ourEmployeeDescription": "En tant qu'employeur souscrivant au principe d’égalité des chances, nous mettons un point d’honneur à promouvoir la diversité à tous les niveaux de notre organisation. Nous encourageons activement les candidatures de personnes issues de tous horizons, reconnaissant la valeur ajoutée d’une équipe diversifiée qui apporte une variété de perspectives, d'expériences et d'idées au service l'innovation et la croissance. Nous nous considérons comme une famille dont la porte est ouverte à ceux qui souhaitent se joindre à nous. Ensemble, nous travaillons en parfaite harmonie, partageons les mêmes valeurs et célébrons nos différences. Chez BUTEC, chaque employé est apprécié et chaque voix est entendue.",
+    "dynamism": "Dynamisme",
+    "dynamismDescription": "BUTEC se nourrit du dynamisme de la croissance, de l'évolution des carrières et del'amélioration continue de notre travail et de nous-mêmes.",
+    "friendlyAtmosphere": "Atmosphère conviviale",
+    "friendlyDescription": "Dans le monde corporatif, BUTEC est une famille où chaque employé est valorisé, chaque voix est entendue et toutes les portes restent ouvertes.",
+    "exposureAndOpportunities": "Exposition et opportunités",
+    "exposureDescription": "Nous sommes polyvalents, nous naviguons à travers différents marchés et nous sommes passionnés par l'apprentissage.",
+    "moreAboutTheButecAcademy": "En savoir plus sur BUTEC Academy",
+    "ourHiringProcess": "Processus de recrutement",
+    "hiringDescription": "BUTEC recherche des individus talentueux ayant un grand potentiel pour contribuer à notre équipe dynamique.",
+    "equalEmploymentFirst": "Égalité des chances en matière d'emploi",
+    "equalEmploymentSecond": "Opportunités",
+    "equalEmploymentDescription": "Engagé envers l'égalité, BUTEC offre des opportunités basées sur le mérite, les qualifications et les compétences, indépendamment de la race, de la couleur, du genre, de l'âge, de la religion, de la nationalité, du handicap ou de l'état matrimonial.",
+    "careerFields": {
+      "careerFields": "Domaines de carrière",
+      "businessDevelopment": "Développement commercial",
+      "engineering": "Ingénierie",
+      "adminstration": "Administration",
+      "tendering": "Appels d'offres",
+      "planningAndCostControl": "Planification et contrôle des coûts",
+      "contractsManagement": "Gestion des contrats",
+      "projectManagemnet": "Gestion de projet",
+      "qualityAssurance": "Assurance qualité",
+      "safetyAndEnvironment": "Santé et sécurité environnementale",
+      "humanResources": "Ressources humaines",
+      "informationTechnology": "Technologies de l'information",
+      "financeAndAccounting": "Finance et comptabilité",
+      "internalAudit": "Audit interne"
+    },
+    "howToApply": "Comment postuler",
+    "applyDescription": "Les candidats intéressés peuvent remplir un formulaire de candidature et joindre leur CV à tout moment. Les données seront intégrées à notre base de données conformément à notre politique de confidentialité. Les CV correspondant au profil du poste seront sélectionnés, et les candidats seront contactés par notre équipe de recrutement."
+  },
+
+  "butecAcademy": {
+    "careers": "Carrières",
+    "butecAcademy": "BUTEC Academy",
+    "butecAcademyDescription": "Dans le sillon de notre quête d’excellence en matière de développement et de gestion de projets d’envergure, nous reconnaissons l’importance de développer et de gérer également des talents exceptionnels. C'est pourquoi nous avons lancé l’Académie BUTEC, une initiative à l'échelle du groupe visant à promouvoir l'excellence, à favoriser la croissance de nos effectifs et à renforcer notre culture d’entreprise. Plus important encore, cette initiative nous permet de former des équipes d’exception en développant les meilleurs talents dans tous nos établissements.",
+    "butecAcademyGoals": {
+      "butecAcademyGoalsSummary": "L'académie poursuit plusieurs objectifs clés. Elle vise notamment à capitaliser sur les connaissances et l'expertise de BUTEC pour répandre la méthode propre à l'entreprise, renforcer les compétences techniques et comportementales en interne, faciliter l'intégration des nouvelles recrues, accroître l'efficacité des employés dans leurspostes actuels ou lors de leur mobilité, et jeter des bases solides pour favoriser l'évolution professionnelle de chacun. Cet objectif est atteint grâce à des modules de formation méticuleusement conçus par nos experts, en collaboration avec notre équipe pédagogique. À ce jour, plus de 30 modules de formation technique ont été développés et dispensés sous la forme de programmes de formation interactifs, en présentiel et à distance, en conformité avec les normes internationales en matière d'apprentissage. Alors que nous réfléchissons à notre parcours, il est évident que l'Académie BUTEC est devenue la pierre angulaire dans notre quête de développement des connaissances et des compétences. Elle joue un rôle essentiel dans l’évolution de nos collaborateurs et dans la création d'une culture d'apprentissage qui se traduit par un succès remarquable tant pour BUTEC que pour nos collaborateurs.",
+      "knowledge": "",
+      "capacity": "",
+      "experience": "",
+      "efficiency": "",
+      "career": ""
+    },
+    "trainingModules": "",
+    "joinOurRanks": "Souhaitez-vous rejoindre notre équipe ?"
+  },
+
+  "openPositions": {
+    "openPositions1": "Postulez",
+    "openPositions2": "",
+    "positionsDescription": "Faites partie de la famille BUTEC. Découvrez nos perspectives de carrière passionnantes",
+    "perfectMatch": "Vous n'avez pas trouvé ce que vous cherchiez ?",
+    "onlineOpportunities": "Remplissez le formulaire et nous vous contacterons si une opportunité se présente."
+  },
+
+  "contact": {
+    "contact": "Contact",
+    "strongConnection": "Tissons des liens solides",
+    "connection": "connection",
+    "nextStep": "Si vous avez des commentaires, des réclamations ou des questions d'ordre général, n'hésitez pas à nous contacter.",
+    "feedbackWithUs": "",
+    "headquarters": {
+      "headquarters": "Headquarters",
+      "lebanonBranch": {
+        "country": "Lebanon",
+        "bldg": "BUTEC Tower, Mkalles Square",
+        "address": "Sin El Fil, Beirut - Lebanon",
+        "POBox": "P.O. Box 109829, Abu Dhabi",
+        "telephone": "T. +961 1 512 333",
+        "fax": "F. +961 1 512 444",
+        "email": ""
+      },
+      "UAEBranch1": {
+        "country": "United Arab Emirates",
+        "bldg": "Office No. 320, Emirates Financial Towers, North Tower, DIFC,",
+        "address": "Dubai, UAE",
+        "POBox": "P.O. Box 115377, Dubai",
+        "telephone": "T. +971 4 3444090",
+        "fax": "F. +971 4 3972786",
+        "email": ""
+      },
+      "UAEBranch2": {
+        "country": "United Arab Emirates",
+        "bldg": "Office No. 306, SJ Tower, Airport",
+        "address": "Road Abu Dhabi - United Arab Emirates",
+        "POBox": "P.O. Box 109829, Abu Dhabi",
+        "telephone": "T. +971 2 443 9869",
+        "fax": "F. +971 2 443 9852",
+        "email": ""
+      },
+      "UAEBranch3": {
+        "country": "United Arab Emirates",
+        "bldg": "Office No. 104, Arenco Offices Building No. 3",
+        "address": "Dubai Investment Park First, Dubai - United Arab Emirates",
+        "POBox": "P.O. Box 109829, Abu Dhabi",
+        "telephone": "T. +971 2 443 9869",
+        "fax": "F. +971 2 443 9852",
+        "email": ""
+      },
+      "algeriaBranch1": {
+        "country": "Algeria",
+        "bldg": "29 Rue des Pins, Hydra",
+        "address": "Algiers",
+        "POBox": "P.O. Box 16035",
+        "telephone": "T. +213 (0) 671 53 85 70",
+        "fax": "",
+        "email": ""
+      },
+      "algeriaBranch2": {
+        "country": "Algeria",
+        "bldg": "Immeuble KPMG",
+        "address": "Lot N° 94 Zone d’Affaires, Bab Ezzouar, Algérie",
+        "POBox": "",
+        "telephone": "T. +213 (0) 661 14 28 25",
+        "fax": "",
+        "email": ""
+      },
+      "qatarBranch": {
+        "country": "Qatar",
+        "bldg": "19th Floor Excellence Tower",
+        "address": "Al Shatt Street, Zone 63 Onaiza Area, West Bay, Doha",
+        "POBox": "P.O. Box 7340",
+        "telephone": "T. +974 4455 2865",
+        "fax": "F. +974 4455 2864",
+        "email": ""
+      },
+      "KSABranch": {
+        "country": "Kingdom of Saudi Arabia",
+        "bldg": "Hadeel Center, 2nd floor, Office no: 10",
+        "address": "Al Yasmin District, King Abdul-Aziz road, Riyadh,",
+        "POBox": "P.O. Box 13326",
+        "telephone": "T. +966112488229",
+        "fax": "",
+        "email": ""
+      },
+      "moroccoBranch1": {
+        "country": "Morocco - Casablanca",
+        "bldg": "Route d’El Jadida PK 374-815 (par Lissasfa) km 13,5",
+        "address": "Commune rurale de Oulad Azzou, Province de Nouaceur – 20190 Casablanca",
+        "POBox": "P.O. Box 23525, Casablanca",
+        "telephone": "T. +212 (0) 522 65 92 00",
+        "fax": "F. +212 (0) 520 66 55 93",
+        "email": ""
+      },
+      "moroccoBranch2": {
+        "country": "Morocco - Tanger",
+        "bldg": "Bureau n°205, 2ème étage, Sis Centre d’affaires Nordami-Lot 43",
+        "address": "ZONE FRANCHE D’EXPORTATION-TANGER",
+        "POBox": "",
+        "telephone": "T. +212 (0) 522 22 44 23 / 81",
+        "fax": "F. +212 (0) 522 29 31 52",
+        "email": ""
+      },
+      "coteDIvoireBranch1": {
+        "country": "Côte D’Ivoire",
+        "bldg": "Immeuble Edison, 4ème étage – 18 BP 2179 Abidjan 18",
+        "address": "Marcory Zone 4, Rue Thomas Edison",
+        "POBox": "",
+        "telephone": "T. +225 27 21 75 90 40",
+        "fax": "F. +225 27 21 75 47 47",
+        "email": ""
+      },
+      "coteDIvoireBranch2": {
+        "country": "Côte D’Ivoire",
+        "bldg": "Parc Technologique Mahatma Gandhi, Bat G BP 855 Zone Franche",
+        "address": "Grand-Bassam",
+        "POBox": "",
+        "telephone": "T. +225 27 21 31 22 18",
+        "fax": "",
+        "email": ""
+      },
+      "coteDIvoireBranch3": {
+        "country": "Côte D’Ivoire",
+        "bldg": "Immeuble XL, 6ème étage, Porte 714",
+        "address": "Avenue Dr Crozet, Plateau Abidjan, Cote d’Ivoire",
+        "POBox": "",
+        "telephone": "T. +225 27 20 30 76 38",
+        "fax": "F. +225 07 09 71 04 80",
+        "email": ""
+      },
+      "burkinaFasoBranch": {
+        "country": "Burkina Faso",
+        "bldg": "Parcelle N° 20, Lot 61, Section A, 05 BP 6293 Ouaga 05",
+        "address": "Ouagadougou, Secteur 15, Avenue Gérard Kango",
+        "POBox": "",
+        "telephone": "T. +226 25 37 50 56/40",
+        "fax": "",
+        "email": ""
+      },
+      "beninBranch": {
+        "country": "Bénin",
+        "bldg": "",
+        "address": "Placodji-Kpodji, 5ème Arrondissement, Cotonou, Littoral Bénin",
+        "POBox": "",
+        "telephone": "T. +229 97 08 32 26",
+        "fax": "",
+        "email": ""
+      },
+      "maliBranch": {
+        "country": "Mali",
+        "bldg": "Bamako, Magnambougou, Rue 600, Porte 147,",
+        "address": "BP 2821 Bamako, Mali",
+        "POBox": "",
+        "telephone": "T. +223 20 20 13 25",
+        "fax": "",
+        "email": ""
+      },
+      "nigerBranch": {
+        "country": "Niger",
+        "bldg": "Niamey, Quartier Château I, Avenue du Général C. de Gaulle, Porte",
+        "address": "187, Niger",
+        "POBox": "",
+        "telephone": "T. +88 60 88 79/80 06 50 00",
+        "fax": "",
+        "email": ""
+      },
+      "senegalBranch": {
+        "country": "Sénégal",
+        "bldg": "Immeuble Seydou Nourou Tall, 1er Étage",
+        "address": "Dakar, 66, Boulevard de la Republique",
+        "POBox": "",
+        "telephone": "T. +221 77 83 13 49",
+        "fax": "",
+        "email": ""
+      },
+      "togoBranch": {
+        "country": "Togo",
+        "bldg": "",
+        "address": "Lomé, Tokoin Hôpital, Villa 223, Togo 07 BP 12626",
+        "POBox": "",
+        "telephone": "",
+        "fax": "",
+        "email": ""
+      },
+      "johannesburgBranch": {
+        "country": "South Africa - Johannesburg",
+        "bldg": "",
+        "address": "49 Maple Road, Pomona, Kempton Park, Gauteng, 1619",
+        "POBox": "P.O. Box 218, Kempton Park, 1620",
+        "telephone": "T. +27 (0) 11 393 9700",
+        "fax": "F. +974 4455 2864",
+        "email": "bes.sa@buteces.com"
+      },
+      "durbanBranch": {
+        "country": "South Africa - Durban",
+        "bldg": "Unit 1A, Greystones Heliport",
+        "address": "35 Old North Coast Rd, Glen Anil, Durban, 4051",
+        "POBox": "",
+        "telephone": "T. +27 (0) 31 569 2010",
+        "fax": "",
+        "email": "bes.sa@buteces.com"
+      },
+      "capTownBranch": {
+        "country": "South Africa - Cape Town",
+        "bldg": "",
+        "address": "33 Lakeshore Drive, Capricorn Park, Muizenberg, 7945",
+        "POBox": "",
+        "telephone": "T. +27 (0) 21 541 0587",
+        "fax": "",
+        "email": "bes.sa@buteces.com"
+      }
+    },
+
+    "writeUs": "Écrivez-nous",
+    "purpose": "Sujet:",
+    "rightChannel": "Veuillez nous faire part de vos préoccupations ou de l’incident que vous avez rencontré. Soyez aussi précis que possible, en indiquant les dates, les noms et toute information pertinente qui nous aidera à comprendre et à traiter votre réclamation de manière efficace.",
+    "name": "Nom:",
+    "firstName": "Prénom",
+    "lastName": "Surnom",
+    "email": "Courriel",
+    "example": "example@example.com",
+    "phoneNumber": "Numéro de téléphone",
+    "countryCode": "En incluant le code pays, sans espaces ni séparateurs.",
+    "message": "Message",
+    "submit": "Soumettre",
+    "exceed": "Veuillez ne pas dépasser 500 caractères"
+  },
+
+  "policy": {
+    "privacyPolicy": "Privacy Policy",
+    "policyApplies": "This Privacy Policy applies to all personal information collected by BUTEC via the website located at www.butec.com.",
+    "personalInformation": {
+      "personalInformation": "What is “personal information”?",
+      "privacyAct": "The Privacy Act 1988 (Cth) currently defines “personal information” as meaning information or an opinion about an identified individual or an individual who is reasonably identifiable:",
+      "opinionTrueOrNot": "whether the information or opinion is true or not; and",
+      "opinionRecorded": "whether the information or opinion is recorded in a material form or not.",
+      "informationClassification": "If the information does not disclose your identity or enable your identity to be ascertained, it will in most cases not be classified as “personal information” and will not be subject to this privacy policy."
+    },
+
+    "informationCollection": {
+      "informationCollection": "What information do we collect?",
+      "websiteUse": "The kind of personal information that we collect from you will depend on how you use the website. The personal information which we collect and hold about you may include: name, phone number, email address."
+    }
+  }
+}

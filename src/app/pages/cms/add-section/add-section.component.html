@@ -1,0 +1,134 @@
+<form class="main-con">
+  <div class="mt-4">
+    <h1>{{ buttonName }} Section</h1>
+  </div>
+  <div class="row form-group mt-4">
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <label for="sectionTitleInput">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="sectionTitleInput"
+        name="sectionTitleInput"
+        placeholder="Section title"
+        [(ngModel)]="sectionTitle"
+      />
+    </div>
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <!--<label for="languageSelect">Language</label>
+      <select
+        class="form-control"
+        id="languageSelect"
+        [(ngModel)]="languageId"
+        name="languageSelect"
+        (change)="LanguageSelectionChange($event)"
+      >
+        <option value="-1">Select Language</option>
+        <option value="2">English</option>
+        <option value="3">French</option>
+        <option value="1">Arabic</option>
+      </select>-->
+      <label for="languageSelect">Language</label>
+      <select
+        class="form-control"
+        id="languageSelect"
+        [(ngModel)]="languageId"
+        name="languageSelect"
+        (change)="LanguageSelectionChange($event)"
+      >
+        <option
+          *ngIf="sectionId == null"
+          value=""
+          selected="selected"
+          disabled="disabled"
+        >
+          Select Language
+        </option>
+        <option *ngFor="let language of languages" [value]="language.Id">
+          {{ language.title }}
+        </option>
+        <!-- <option value="3">French</option>
+        <option value="1">Arabic</option> -->
+      </select>
+    </div>
+  </div>
+
+  <!-- Main Image Section-->
+  <!--<div class="row form-group mt-4">
+    <div class="form-group">
+      <fieldset class="form-group">
+        <label>Section Image</label>-->
+  <!--{{ imageError }}-->
+  <!--<div class="custom-file fileInputProfileWrap">
+          <input
+            type="file"
+            (change)="OnFileChange($event)"
+            class="fileInputProfile form-control"
+          />
+          <div class="img-space mt-2" id="image">
+            <ng-container *ngIf="isImageSaved; else elseTemplate">
+              <img
+                class="imagesize img-responsive"
+                id="chosenImage"
+                alt="No Image"
+                [src]="cardImageBase64"
+              />
+            </ng-container>
+            <ng-template #elseTemplate>
+              <img
+                *ngIf="sectionId == null || image == null || image == ''"
+                src="./../../assets/img/image_placeholder.png"
+                class="imagesize img-responsive"
+                alt="No Image"
+              />
+              <img
+                *ngIf="sectionId != null && image != null && image != ''"
+                src="{{ image }}"
+                class="imagesize img-responsive"
+                alt="No Image"
+              />
+            </ng-template>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>-->
+  <div class="row form-group mt-4">
+    <div
+      class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
+    >
+      <label for="descriptionTxtArea">Description</label>
+      <textarea
+        class="form-control"
+        id="descriptionTxtArea"
+        rows="5"
+        name="descriptionTxtArea"
+        [(ngModel)]="description"
+      ></textarea>
+    </div>
+  </div>
+  <!--<div class="row form-group mt-4">
+    <div
+      class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
+    >
+      <label for="notesTxtArea">Notes</label>
+      <textarea
+        class="form-control"
+        id="notesTxtArea"
+        rows="5"
+        name="notesTxtArea"
+        [(ngModel)]="notes"
+      ></textarea>
+    </div>
+  </div>-->
+  <div class="row form-group mt-4">
+    <div class="m-t-20 text-center">
+      <a
+        class="btn btn-primary btn-lg"
+        (click)="AddEditSection()"
+        href="javascript:void(0)"
+        >{{ buttonName }} Section</a
+      >
+    </div>
+  </div>
+</form>

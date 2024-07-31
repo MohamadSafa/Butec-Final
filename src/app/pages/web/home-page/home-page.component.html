@@ -1,0 +1,745 @@
+<section class="home text-to-center" style="height: 100vh">
+  <div class="section">
+    <img
+      src="{{ imageUrl }}{{ image }}"
+      alt="Home image"
+      class="home-img"
+      style="height: 100vh"
+    />
+
+    <div class="home-img-group">
+      <h1 class="home-img-title" [innerHTML]="title"></h1>
+      <h2 class="home-img-subtitle" [innerHTML]="subTitle"></h2>
+      <p class="home-img-text" [innerHTML]="paragraph1"></p>
+    </div>
+  </div>
+</section>
+
+<section class="circles-container">
+  <div class="container home-qoute-text-content">
+    <img
+      src="./assets/icons/double_qoutation.svg"
+      alt=""
+      class="home-qoutation-icon"
+      style="float: left; margin-right: 20px"
+    />
+    <p class="home-qoutation-text ml-4" style="float: left">
+      {{"home.areasOfExpertiseCircles.quote" | translate}}
+    </p>
+  </div>
+  <br />
+  <div
+    style="
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      padding-bottom: 40px;
+    "
+  >
+    <div class="container container-to-center">
+      <div class="row">
+        <div class="col-3 col-xs-3 col-s-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 circle-div space-btn-divs1">
+          <div class="rounded-circle circle" (click)="GoToPage('Engineering and Contracting')">
+            <div class="circle-animation"></div>
+            <a class="remove-underline">
+              <img
+                src="./assets/icons/engineering_contracting_red.svg"
+                alt="Home image"
+                class="circle-icon"
+              />
+              <p class="circle-title">
+                <strong>
+                  {{"home.areasOfExpertiseCircles.engineeringAnd" | translate}}<br />{{"home.areasOfExpertiseCircles.contracting" | translate}}
+                </strong>
+              </p>
+            </a>
+          </div>
+        </div>
+        <div class="col-3 col-xs-3 col-s-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 circle-div space-btn-divs1">
+          <div class="rounded-circle circle" (click)="GoToPage('Electro-Mechanical Solutions')">
+            <div class="circle-animation"></div>
+            <a class="remove-underline">
+              <img
+                src="./assets/icons/electro_mechincal_cerulean.svg"
+                alt="Home image"
+                class="circle-icon"
+              />
+              <p class="circle-title">
+                <strong>
+                  {{"home.areasOfExpertiseCircles.electroMechanical" | translate}}<br />{{"home.areasOfExpertiseCircles.Solutions" | translate}}
+                </strong>
+              </p>
+            </a>
+          </div>
+        </div>
+        <div class="col-3 col-xs-3 col-s-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 circle-div space-btn-divs1">
+          <div class="rounded-circle circle" (click)="GoToPage('Facility Services')">
+            <div class="circle-animation"></div>
+            <a class="remove-underline">
+              <img
+                src="./assets/icons/facility_services_teal.svg"
+                alt="Home image"
+                class="circle-icon"
+              />
+              <p class="circle-title">
+                <strong>{{"home.areasOfExpertiseCircles.facilityServices" | translate}}</strong>
+              </p>
+            </a>
+          </div>
+        </div>
+        <div class="col-3 col-xs-3 col-s-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 circle-div space-btn-divs1">
+          <div class="rounded-circle circle" (click)="GoToPage('Utility Services')">
+            <div class="circle-animation"></div>
+            <a class="remove-underline">
+              <img
+                src="./assets/icons/Untitled-1-03.svg"
+                alt="Home image"
+                class="circle-icon"
+              />
+              <p class="circle-title">
+                <strong>{{"home.areasOfExpertiseCircles.utilityServices" | translate}}</strong>
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="perform">
+  <h2 class="perform-title">{{ "home.performanceSection.performanceInNumbers" | translate }}</h2>
+  <p class="perform-text">
+    {{ "home.performanceSection.description1" | translate }} <br > {{ "home.performanceSection.description2" | translate }}
+  </p>
+  <div class="container">
+    <div class="row perform-box-container">
+      <div
+        class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 perform-box space-btn-divs1"
+      >
+        <h5 class="perform-box-title">
+          <app-animated-number [endValue]="60"></app-animated-number>+
+        </h5>
+        <p class="perform-box-text">{{ "home.performanceSection.boxes.years" | translate }}</p>
+      </div>
+      <div
+        class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 perform-box space-btn-divs1"
+      >
+        <h5 class="perform-box-title">
+          <app-animated-number [endValue]="21"></app-animated-number>
+        </h5>
+        <p class="perform-box-text">
+          {{ "home.performanceSection.boxes.countries1" | translate }}<br />{{ "home.performanceSection.boxes.countries2" | translate }}
+        </p>
+      </div>
+      <div
+        class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 perform-box space-btn-divs1"
+      >
+        <h5 class="perform-box-title">
+          <app-animated-number [endValue]="7500"></app-animated-number>+
+        </h5>
+        <p class="perform-box-text">{{ "home.performanceSection.boxes.dedicated" | translate }}</p>
+      </div>
+      <div
+        class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 perform-box space-btn-divs1"
+      >
+        <h5 class="perform-box-title">
+          <app-animated-number [endValue]="35"></app-animated-number>+
+        </h5>
+        <p class="perform-box-text">{{ "home.performanceSection.boxes.nationalities" | translate }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="projects">
+  <div class="container">
+    <div class="row">
+      <div
+        class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-3 col-lg-3 col-xl-3"
+      >
+        <h2 class="projects-title-home">{{ "home.projectsSection.projects" | translate }}</h2>
+        <p class="projects-text">
+          {{ "home.projectsSection.description" | translate }}
+        </p>
+        <button class="projects-btn" [routerLink]="['/', 'List-Projects']">
+          <strong>{{ "buttons.browseAll" | translate }}</strong>
+        </button>
+      </div>
+      <div
+        class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-9 col-lg-9 col-xl-9"
+      >
+        <img
+          src="{{ projectImage }}"
+          alt="join image"
+          class="projects-img1 img-fluid"
+        />
+        <div class="container">
+          <div class="row">
+            <div
+              class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-9 col-lg-9 col-xl-9"
+            >
+              <div style="text-align: left; margin-left: -15px" class="mt-3">
+                <span class="projects-img-title">{{ projectTitle }}</span
+                ><br />
+                <span class="projects-img-subtile">{{ projectLocation }}</span>
+              </div>
+            </div>
+            <div
+              class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-3 col-lg-3 col-xl-3"
+            >
+              <div class="container">
+                <div class="row">
+                  <div
+                    class="col-4 col-xs-4 col-s-4 col-sm-4 col-md-6 col-lg-6 col-xl-6"
+                  >
+                    <div
+                      class="rounded-circle back-arrow float-right mt-3 text-to-center"
+                    >
+                      <a (click)="GoBackword(decrement)"
+                        ><img
+                          src="./assets/icons/back-arrow.svg"
+                          alt="back arrow image"
+                          class="ic_arrow mt-3"
+                      /></a>
+                    </div>
+                  </div>
+                  <div
+                    class="col-4 col-xs-4 col-s-4 col-sm-4 col-md-6 col-lg-6 col-xl-6"
+                  >
+                    <div class="rounded-circle next-arrow float-right mt-3">
+                      <a (click)="GoForward(increment)"
+                        ><img
+                          src="./assets/icons/forward-arrow.svg"
+                          alt="forward arrow image"
+                          class="ic_arrow mt-3"
+                      /></a>
+                    </div>
+                  </div>
+                  <div
+                    class="col-4 col-xs-4 col-s-4 col-sm-4 col-md-6 col-lg-6 col-xl-6"
+                  >
+                    <button
+                      class="projects-btn-media"
+                      [routerLink]="['/', 'List-Projects']"
+                    >
+                      <strong>{{ "buttons.browseAll" | translate }}</strong>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="clients">
+  <h2 class="clients-title">
+    Trusted by industry leaders, our valued clients include…
+  </h2>
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/royal-air-maroc.png"
+        alt="Royal Air logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>  
+
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/Bank_Al-Maghrib_logo.png"
+        alt="Maghrib logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/ADwea.png"
+        alt="Adwea logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/bank-of-africa-vector-logo-2022.png"
+        alt="Bank of Africa logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/bnp-paribas-2.png"
+        alt="Bnp logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/De Beers Group.png"
+        alt="De Beers logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/EBRD-Logo.png"
+        alt="EBRD logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/hsbc.png"
+        alt="HSBC logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/ifc_new_logo.png"
+        alt="ifc logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/kahrama logo.png"
+        alt="kahrama logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/logo_coxabengoa-1.png"
+        alt="coxabengao logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/teraco-dlr-logo.png"
+        alt="teraco logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/Nakheel log copy.png"
+        alt="Nakheel logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/veolia (1).png"
+        alt="veolia logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/vestas_logo_rgb.png"
+        alt="vestas logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/suez-logo-1.png"
+        alt="Suez logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/Red Sea Global.png"
+        alt="Red Sea logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+          src="./assets/images/HZI_Logo_RGB_T.png"
+          alt="HZI logo"
+          class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/mtn-new-logo.png"
+        alt="Mtn logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/PngItem_238553 copy.png"
+        alt="Png logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/Saudi_Aramco-logo.png"
+        alt="Aramco logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/LafargeHolcim logo.png"
+        alt="Lafarge logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/Prosuma_logo_HD copy.png"
+        alt="Prosuma logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/Marafeq logo .png"
+        alt="Marafeq logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/ONA.png"
+        alt="ONA logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/orange-logo-vector.png"
+        alt="orange logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/sonatrach logo.png"
+        alt="sonatrach logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/sonelgaz logo.png"
+        alt="sonelgaz logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/ashghal logo.png"
+        alt="Ashghal logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/TotalEnergies.png"
+        alt="Total logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/BCEAO logo vector.png"
+        alt="BCEAO logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/2021_Renault_Group_logo.png"
+        alt="Renault logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+    
+    <ng-template carouselSlide>
+      <div class="clients-icon-container">
+        <img
+        src="./assets/images/wartsila-logo-vector.png"
+        alt="wartsila logo"
+        class="client-icon"
+        />
+      </div>
+    </ng-template>
+
+  </owl-carousel-o>
+</section> -->
+
+<section class="env">
+  <div class="container">
+    <div class="row">
+      <div
+        class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 env-image-container"
+      >
+        <img
+          src="./assets/images/Environmental-and-Social-Image.webp"
+          alt="Environmental and social image"
+          class="env-img"
+        />
+      </div>
+      <div
+        class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 env-desc space-btn-divs2"
+      >
+        <h2 class="env-desc-title">
+          {{ "home.enviromentalSection.enviromental" | translate }}
+        </h2>
+        <p class="env-desc-subtitle">
+          <strong>{{ "home.enviromentalSection.diversity" | translate }}</strong>
+        </p>
+        <p class="env-desc-text">
+          {{ "home.enviromentalSection.diversityDescription" | translate }}
+        </p>
+        <p class="env-desc-subtitle">
+          <strong
+            >{{ "home.enviromentalSection.monitoring" | translate }}</strong
+          >
+        </p>
+        <p class="env-desc-text">
+          {{ "home.enviromentalSection.monitoringDescription1" | translate }}
+          <br />
+          {{ "home.enviromentalSection.monitoringDescription2" | translate }}
+        </p>
+        <p class="env-desc-subtitle">
+          <strong>{{ "home.enviromentalSection.sustainability" | translate }}</strong>
+        </p>
+        <p class="env-desc-text">
+          {{ "home.enviromentalSection.sustainabilityDescription1" | translate }}
+          <br />
+          {{ "home.enviromentalSection.sustainabilityDescription2" | translate }}
+        </p>
+        <div class="env-btn-container">
+          <button class="env-desc-btn" [routerLink]="['/', 'Leadership']">
+            <strong>{{ "buttons.learnMore" | translate }}</strong>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="address">
+  <div class="container">
+    <div class="row f-container">
+      <div
+        class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-0"
+      >
+        <h2 class="address-title">{{ "home.reachSection.reach1" | translate }}<br />{{ "home.reachSection.reach2" | translate }}</h2>
+        <p class="address-text">
+          {{ "home.reachSection.description" | translate }}
+        </p>
+        <div class="env-btn-container">
+          <button class="address-btn" [routerLink]="['/', 'Contact']">
+            <strong>{{ "buttons.workWithUs" | translate }}</strong>
+          </button>
+        </div>
+      </div>
+      <div
+        class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"
+      >
+        <img
+          src="./assets/images/Contact-MapPins-Final-01-01.svg"
+          alt="Home Map Image"
+          class="address-map img-fluid"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="join-us">
+  <div class="container">
+    <div class="row">
+      <div
+        class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 join-us-img-container"
+      >
+        <img
+          src="./assets/images/Join-Our-Ranks.webp"
+          alt="join image"
+          class="join-us-img"
+        />
+      </div>
+      <div
+        class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 join-us-desc"
+      >
+        <h2 class="join-us-title">{{ "home.joinSection.join" | translate }}</h2>
+        <p class="join-us-desc-text desktop-show">
+          {{ "home.joinSection.description0" | translate }} <br />
+          {{ "home.joinSection.description1" | translate }} <br />
+          {{ "home.joinSection.description2" | translate }} <br />
+          {{ "home.joinSection.description3" | translate }} <br />
+          {{ "home.joinSection.description4" | translate }} <br />
+          {{ "home.joinSection.description5" | translate }} <br />
+          {{ "home.joinSection.description6" | translate }} <br />
+          {{ "home.joinSection.description7" | translate }} <br />
+          {{ "home.joinSection.description8" | translate }} <br />
+          {{ "home.joinSection.description9" | translate }} <br />
+        </p>
+        <p class="join-us-desc-text mobile-show">
+          {{ "home.joinSection.descriptionMobile" | translate }}
+        </p>
+        <div class="container">
+          <div class="row row-join">
+            <div
+              class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-3 join-us-life-btn-container"
+            >
+              <button
+                class="join-us-life-btn"
+                [routerLink]="['/', 'Butec-Academy']"
+              >
+                <strong>{{ "buttons.butecAcademy" | translate }}</strong>
+              </button>
+            </div>
+            <div
+              class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 join-us-life-btn-container"
+            >
+              <button
+                class="join-us-browse-btn"
+                [routerLink]="['/', 'Positions']"
+              >
+                <strong>{{ "buttons.browsePositions" | translate }}</strong>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reach">
+  <div class="container">
+    <div class="row reach-out">
+      <div
+        class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 reach-discuss-center"
+        style="border-right: 2px solid #e4e5e7"
+      >
+        <h2 class="reach-discuss-title">{{ "home.contactSection.discuss" | translate }}</h2>
+        <button class="reach-discuss-btn" [routerLink]="['/', 'Contact']">
+          <strong>{{ "buttons.letsDiscuss" | translate }}</strong>
+        </button>
+      </div>
+      <div
+        class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 reach-discuss-center"
+      >
+        <h2 class="reach-discuss-title">{{ "home.contactSection.feedback" | translate }}</h2>
+        <button class="reach-discuss-btn" [routerLink]="['/', 'Contact']">
+          <strong>{{ "buttons.giveFeedback" | translate }}</strong>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<router-outlet></router-outlet>

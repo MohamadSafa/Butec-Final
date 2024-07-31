@@ -1,0 +1,145 @@
+<!-- topnavbar -->
+<div class="topnav shadow p-1">
+  <a>Butec Admin Dashboard</a>
+  <span class="menu" (click)="openNav(true)"><i class="bi bi-list"></i></span>
+</div>
+
+<!-- topnavbar -->
+
+<!-- left sidebar nav -->
+
+<div class="sidebar shadow p-2" id="sidebar" [ngStyle]="responsiveMenu">
+  <div class="navigation">
+    <ul>
+      <li>
+        <a routerLink="/Dashboard/Sections">
+          <span class="icon">
+            <ion-icon name="logo-microsoft"></ion-icon>
+          </span>
+          <span class="title">Sections</span>
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/Dashboard/Home">
+          <span class="icon">
+            <ion-icon name="home-outline"></ion-icon>
+          </span>
+          <span class="title">Home</span>
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/Dashboard/Expertises">
+          <span class="icon">
+            <ion-icon name="briefcase-outline"></ion-icon>
+          </span>
+          <span class="title">Expertise</span>
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/Dashboard/Projects">
+          <span class="icon">
+            <ion-icon name="business-outline"></ion-icon>
+          </span>
+          <span class="title">Projects</span>
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/Dashboard/News">
+          <span class="icon">
+            <ion-icon name="newspaper-outline"></ion-icon>
+          </span>
+          <span class="title">News</span>
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/Dashboard/Vacancies">
+          <span class="icon">
+            <ion-icon name="people-circle-outline"></ion-icon>
+          </span>
+          <span class="title">Vacancies</span>
+        </a>
+      </li>
+
+      <!-- <li>
+          <a href="#">
+            <span class="icon">
+              <ion-icon name="help-outline"></ion-icon>
+            </span>
+            <span class="title">Help</span>
+          </a>
+        </li>
+  
+        <li>
+          <a href="#">
+            <span class="icon">
+              <ion-icon name="settings-outline"></ion-icon>
+            </span>
+            <span class="title">Settings</span>
+          </a>
+        </li>
+  
+        <li>
+          <a href="#">
+            <span class="icon">
+              <ion-icon name="lock-closed-outline"></ion-icon>
+            </span>
+            <span class="title">Password</span>
+          </a>
+        </li> -->
+
+      <li>
+        <a routerLink="/LoginPage">
+          <span class="icon">
+            <ion-icon name="log-out-outline"></ion-icon>
+          </span>
+          <span class="title">Sign Out</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- <div class="sidebar shadow p-2" id="sidebar" [ngStyle]="responsiveMenu">
+    <ul>
+      <li>
+        <a routerLink="/home"><i class="bi bi-speedometer2"></i> Dashboard</a>
+      </li>
+      <li>
+        <a routerLink="/news"><i class="bi bi-card-text"></i> Reports</a>
+      </li>
+      <li>
+        <a routerLink="/projects"
+          ><i class="bi bi-bag"></i> Products
+          <i class="bi bi-arrow-right icon"></i
+        ></a>
+        <ul class="dropdown-container">
+          <li><a href="#">Link1</a></li>
+          <li><a href="#">Link2</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#"
+          ><i class="bi bi-tag"></i> Categories
+          <i class="bi bi-arrow-right icon"></i
+        ></a>
+        <ul class="dropdown-container">
+          <li><a href="#">Link1</a></li>
+          <li><a href="#">Link2</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#"><i class="bi bi-person-gear"></i> User</a>
+      </li>
+      <li>
+        <a href="#"><i class="bi bi-box-arrow-left"></i> Logout</a>
+      </li>
+    </ul>
+  </div> -->
+
+<!-- left sidebar nav -->
+<router-outlet></router-outlet>

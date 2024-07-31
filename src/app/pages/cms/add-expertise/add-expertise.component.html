@@ -1,0 +1,303 @@
+<form class="main-con">
+  <div>
+    <h1>{{ buttonName }} Expertise</h1>
+  </div>
+  <div class="row form-group mt-4">
+    <div
+      class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
+    >
+      <label for="expertiseTitleInput">Title</label>
+      <!--<input
+        #TitleInput
+        type="text"
+        class="form-control"
+        id="expertiseTitleInput"
+        placeholder="Title"
+        [(ngModel)]="expertiseTitle"
+        name="expertiseTitle"
+      />-->
+      <form [formGroup]="titleForm">
+        <div class="editor">
+          <ngx-editor-menu [editor]="titleEditor" [toolbar]="toolbar">
+          </ngx-editor-menu>
+          <ngx-editor
+            [editor]="titleEditor"
+            formControlName="titleEditorContent"
+            [(ngModel)]="title"
+          >
+          </ngx-editor>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row form-group mt-4">
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <label for="languageSelect">Language</label>
+      <select
+        class="form-control"
+        id="languageSelect"
+        [(ngModel)]="languageId"
+        name="languageSelect"
+        (change)="LanguageSelectionChange($event)"
+      >
+        <option
+          *ngIf="expertiseId == null"
+          value=""
+          selected="selected"
+          disabled="disabled"
+        >
+          Select Language
+        </option>
+        <option *ngFor="let language of languages" [value]="language.Id">
+          {{ language.title }}
+        </option>
+        <!-- <option value="3">French</option>
+        <option value="1">Arabic</option> -->
+      </select>
+    </div>
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <label for="expertiseSelect1">Expertise</label>
+      <select
+        class="form-control"
+        id="expertiseSelect1"
+        [(ngModel)]="selectedExpertise"
+        name="expertiseSelect"
+        (change)="ExpertiseSelectionChange($event)"
+      >
+        <option
+          *ngIf="expertiseId == null"
+          value=""
+          selected="selected"
+          disabled="disabled"
+        >
+          Select Expertise
+        </option>
+        <option *ngFor="let expertise of expertises" [value]="expertise.Id">
+          {{ expertise.title }}
+        </option>
+        <!--<option value="8">General Contracting Expertise</option>
+        <option value="9">Electro Mechanical Contracting Expertise</option>
+        <option value="10">Hard and Soft Facility Management Expertise</option>
+        <option value="11">Utility Services Expertise</option>-->
+      </select>
+    </div>
+  </div>
+  <div class="row form-group mt-4">
+    <div class="form-group">
+      <fieldset class="form-group">
+        <label>Main Image</label>
+        <!--{{ imageError }}-->
+        <div class="custom-file fileInputProfileWrap">
+          <input
+            type="file"
+            (change)="OnFileChange($event)"
+            class="fileInputProfile form-control"
+          />
+          <div class="img-space mt-2" id="image">
+            <ng-container *ngIf="isImageSaved; else elseTemplate">
+              <img
+                class="imagesize img-responsive"
+                id="chosenImage"
+                alt="No Image"
+                [src]="cardImageBase64"
+              />
+            </ng-container>
+            <ng-template #elseTemplate>
+              <img
+                *ngIf="expertiseId == null || image == null || image == ''"
+                src="./../../assets/img/image_placeholder.png"
+                class="imagesize img-responsive"
+                alt="No Image"
+              />
+              <img
+                *ngIf="expertiseId != null && image != null && image != ''"
+                src="{{ image }}"
+                class="imagesize img-responsive"
+                alt="No Image"
+              />
+            </ng-template>
+          </div>
+        </div>
+      </fieldset>
+      <!--<label for="imageInput">Project Image</label>&nbsp;
+        <input
+          type="file"
+          class="form-control-file"
+          id="imageInput"
+          (change)="OnFileChange($event)"
+        />&nbsp;-->
+    </div>
+  </div>
+  <div class="row form-group mt-4">
+    <div class="form-group">
+      <fieldset class="form-group">
+        <label>Mobile Image</label>
+        <!--{{ imageError }}-->
+        <div class="custom-file fileInputProfileWrap">
+          <input
+            type="file"
+            (change)="OnMobileFileChange($event)"
+            class="fileInputProfile form-control"
+          />
+          <div class="img-space mt-2" id="mobileImage">
+            <ng-container *ngIf="isMobileImageSaved; else elseMobileTemplate">
+              <img
+                class="imagesize img-responsive"
+                id="chosenImage"
+                alt="No Image"
+                [src]="mobileImageBase64"
+              />
+            </ng-container>
+            <ng-template #elseMobileTemplate>
+              <img
+                *ngIf="
+                  expertiseId == null ||
+                  mobileImage == null ||
+                  mobileImage == ''
+                "
+                src="./../../assets/img/image_placeholder.png"
+                class="imagesize img-responsive"
+                alt="No Image"
+              />
+              <img
+                *ngIf="
+                  expertiseId != null &&
+                  mobileImage != null &&
+                  mobileImage != ''
+                "
+                src="{{ mobileImage }}"
+                class="imagesize img-responsive"
+                alt="No Image"
+              />
+            </ng-template>
+          </div>
+        </div>
+      </fieldset>
+      <!--<label for="imageInput">Project Image</label>&nbsp;
+        <input
+          type="file"
+          class="form-control-file"
+          id="imageInput"
+          (change)="OnFileChange($event)"
+        />&nbsp;-->
+    </div>
+  </div>
+  <div class="row form-group mt-4">
+    <div
+      class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
+    >
+      <label for="paragraph1TxtArea">Introduction</label>
+      <!--<textarea
+        class="form-control"
+        id="paragraph1TxtArea"
+        rows="5"
+        [(ngModel)]="paragraph1"
+        name="Introduction"
+      ></textarea>-->
+      <form [formGroup]="paragraph1Form">
+        <div class="editor">
+          <ngx-editor-menu [editor]="paragraph1Editor" [toolbar]="toolbar">
+          </ngx-editor-menu>
+          <ngx-editor
+            [editor]="paragraph1Editor"
+            formControlName="paragraph1EditorContent"
+            [(ngModel)]="paragraph1"
+          >
+          </ngx-editor>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row form-group mt-4">
+    <div
+      class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
+    >
+      <label for="summaryTxtArea">Summary</label>
+      <!--<textarea
+        class="form-control"
+        id="paragraph2TxtArea"
+        rows="5"
+        [(ngModel)]="paragraph2"
+        name="Summary"
+      ></textarea>-->
+      <form [formGroup]="paragraph2Form">
+        <div class="editor">
+          <ngx-editor-menu [editor]="paragraph2Editor" [toolbar]="toolbar">
+          </ngx-editor-menu>
+          <ngx-editor
+            [editor]="paragraph2Editor"
+            formControlName="paragraph2EditorContent"
+            [(ngModel)]="paragraph2"
+          >
+          </ngx-editor>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row form-group mt-4">
+    <div
+      class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
+    >
+      <label for="paragraph3TxtArea">Descriprion</label>
+      <!--<textarea
+        class="form-control"
+        id="paragraph3TxtArea"
+        rows="5"
+        [(ngModel)]="paragraph3"
+        name="description"
+      ></textarea>-->
+      <form [formGroup]="paragraph3Form">
+        <div class="editor">
+          <ngx-editor-menu [editor]="paragraph3Editor" [toolbar]="toolbar">
+          </ngx-editor-menu>
+          <ngx-editor
+            [editor]="paragraph3Editor"
+            formControlName="paragraph3EditorContent"
+            [(ngModel)]="paragraph3"
+          >
+          </ngx-editor>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!--<div class="row form-group mt-4">
+      <div class="col-md-12">
+        <label for="notesTxtArea">Notes</label>
+        <textarea
+          class="form-control"
+          id="notesTxtArea"
+          rows="5"
+          [(ngModel)]="notes"
+          name="notes"
+        ></textarea>
+      </div>
+    </div>-->
+  <div class="row form-group mt-4">
+    <div class="m-t-20 text-center">
+      <a
+        class="btn btn-primary btn-lg"
+        (click)="AddEditExpertise()"
+        href="javascript:void(0)"
+        >{{ buttonName }} Expertise</a
+      >
+    </div>
+  </div>
+  <!--<div class="form-group">
+      <label for="exampleFormControlSelect2">Example multiple select</label>
+      <select multiple class="form-control" id="exampleFormControlSelect2">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">textarea</label>
+      <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="3"
+      ></textarea>
+    </div>-->
+</form>

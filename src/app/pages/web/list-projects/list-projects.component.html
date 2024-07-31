@@ -1,0 +1,231 @@
+<section style="margin-top: 80px">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-md-12 col-lg-5 col-s-12 col-sm-12 col-xl-5">
+        <h1 class="projects-page-title text-nowrap">{{ "projects.projects" | translate }}</h1>
+      </div>
+      <div class="col-md-12 col-lg-7 col-s-12 col-sm-12 col-xl-7">
+        <p class="projects-page-text">
+          {{ "projects.description" | translate }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="gray-filter-container">
+  <div class="container container-to-center">
+    <div class="row gray-filter-box">
+      <div class="col-6 col-xs-6 col-s-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <h6 class="gray-filter-title">{{ "filters.filterByExpertise" | translate }}</h6>
+      </div>
+      <div class="col-6 col-xs-6 col-s-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <select2
+          [styleMode]="'noStyle'"
+          class="form-control gray-filter-subtitle deep-gray-background"
+          id="expertiseSelect"
+          name="expertiseSelect"
+          [data]="businessLines"
+          [value]="value"
+          (update)="ExpertiseSelectionChange($event)"
+        >
+          <ng-template id="option" #option let-data="data">{{
+            data.title
+          }}</ng-template></select2
+        >
+        <!--<select
+          class="form-control gray-filter-subtitle deep-gray-background"
+          id="expertiseSelect"
+          name="expertiseSelect"
+          (change)="ExpertiseSelectionChange($event)"
+        >
+          <option
+            class="deep-gray-background gray-filter-subtitle"
+            value="0"
+            selected="selected"
+          >
+            All Projects
+          </option>
+          <option
+            class="deep-gray-background gray-filter-subtitle"
+            *ngFor="let businessLine of businessLines"
+            [value]="businessLine.Id"
+          >
+            {{ businessLine.title }}
+          </option>
+        </select>-->
+      </div>
+      <!--<div class="col-3 col-xs-3 col-s-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+        <h6 class="gray-filter-subtitle">Sector</h6>
+      </div>
+      <div class="col-3 col-xs-3 col-s-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+        <h6 class="gray-filter-subtitle">Location</h6>
+      </div>-->
+    </div>
+  </div>
+</section>
+<!--<section class="gray-filter-container">
+  <div class="container container-to-center">
+    <div class="row gray-filter-box">
+      <div class="col-6 col-xs-6 col-s-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <h6 class="gray-filter-title">Filter by Expertise</h6>
+      </div>
+      <div class="col-6 col-xs-6 col-s-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <select
+          class="form-control gray-filter-subtitle deep-gray-background"
+          id="expertiseSelect"
+          name="expertiseSelect"
+          (change)="ExpertiseSelectionChange($event)"
+        >
+          <option
+            class="deep-gray-background gray-filter-subtitle"
+            value="0"
+            selected="selected"
+          >
+            All Projects
+          </option>-->
+          <!--<option
+            class="deep-gray-background gray-filter-subtitle"
+            value="1"          >
+            Engineering and Contracting
+          </option>
+          <option
+            class="deep-gray-background gray-filter-subtitle"
+            value="2"          >
+            Electro-Mechanical Solutions
+          </option>
+          <option
+            class="deep-gray-background gray-filter-subtitle"
+            value="3"          >
+            Facility Services
+          </option>
+          <option
+            class="deep-gray-background gray-filter-subtitle"
+            value="4"          >
+            Utility Services
+          </option>-->
+          <!--<option
+            class="deep-gray-background gray-filter-subtitle"
+            *ngFor="let businessLine of businessLines"
+            [value]="businessLine.Id"
+          >
+            {{ businessLine.title }}
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+</section>-->
+<section>
+  <div class="other-imgs-container">
+    <div class="container">
+      <div class="row">
+        <div
+        *ngFor="let project of example | slice : 0 : max"
+          class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 other-img-body1 other-img-space1"
+          (click)="GoToProjectDetailsPage($any(project).EntityId, $any(project).CategoryId)"
+        >
+
+          <img
+            *ngIf="$any(project).CategoryId == 1"
+            src="./assets/icons/engineering_contracting_white.svg"
+            alt="Business Line icon"
+            class="projects-icon other-mini-icon red-background other-projects-hover"
+          />
+          <img
+          *ngIf="$any(project).CategoryId == 2"
+            src="./assets/icons/electro_mechincal_white.svg"
+            alt="Business Line icon"
+            class="projects-icon other-mini-icon cerulean-background other-projects-hover"
+          />
+          <img
+          *ngIf="$any(project).CategoryId == 3"
+            src="./assets/icons/facility_services_white.svg"
+            alt="Business Line icon"
+            class="projects-icon other-mini-icon teal-background other-projects-hover"
+          />
+          <img
+          *ngIf="$any(project).CategoryId == 4"
+            src="./assets/icons/Utility-Services-Green.svg"
+            alt="Business Line icon"
+            class="projects-icon other-mini-icon green-background"
+          />
+            <img
+              src="{{ imageUrl }}{{ $any(project).MobileImage }}"
+              alt="Business Line image"
+              class="projects-images1 img-fluid"
+          />
+
+
+          <div class="">
+            <h6 class="projects-title">{{ $any(project).Title }}</h6>
+            <p class="projects-sub-text">{{ $any(project).Location }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="w-100 text-to-center">
+    <button class="show-more-btn" [routerLink]="['/', 'List-Projects']">
+      <strong class="show-more-text">Show more</strong>
+    </button>
+  </div> -->
+
+
+
+  <!-- <div class="container">
+    <div class="row">
+      <div
+        *ngFor="let project of example | slice : 0 : max"
+        class="col-6 col-md-6 col-lg-6 col-s-12 col-sm-12 col-xl-6 project-images-box"
+      >
+        <a class="grid-icon" (click)="GoToProjectDetailsPage($any(project).EntityId, $any(project).CategoryId)">
+          <img
+            *ngIf="$any(project).CategoryId == 1"
+            src="./assets/icons/engineering_contracting_white.svg"
+            alt="Business Line icon"
+            class="projects-icon red-background"
+          />
+
+          <img
+            *ngIf="$any(project).CategoryId == 2"
+            src="./assets/icons/electro_mechincal_white.svg"
+            alt="Business Line icon"
+            class="projects-icon cerulean-background"
+          />
+
+          <img
+            *ngIf="$any(project).CategoryId == 3"
+            src="./assets/icons/facility_services_white.svg"
+            alt="Business Line icon"
+            class="projects-icon teal-background"
+          />
+
+          <img
+            *ngIf="$any(project).CategoryId == 4"
+            src="./assets/icons/Utility-Services-Green.jpg"
+            alt="Business Line icon"
+            class="projects-icon-green green-background"
+          />
+
+          <img
+            src="{{ imageUrl }}{{ $any(project).Image }}"
+            alt="Business Line image"
+            class="projects-images img-fluid"
+          />
+        </a>
+        <h6 class="projects-title">
+          {{ $any(project).Title }}
+        </h6>
+        <br />
+        <span class="projects-sub-text">{{ $any(project).Location }}</span>
+      </div>
+    </div>
+  </div> -->
+  <div *ngIf="projectsListLength>10" class="text-to-center w-100">
+    <button class="show-more-btn" (click)="toggle()">
+      <strong class="show-more-text" *ngIf="max<projectsListLength">{{ "buttons.showMore" | translate }}</strong>
+      <strong class="show-more-text" *ngIf="max>=projectsListLength">{{ "buttons.showLess" | translate }}</strong>
+    </button>
+  </div>
+</section>
+  

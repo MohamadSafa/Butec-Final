@@ -1,0 +1,61 @@
+<section class="news-header-container" style="margin-top: 80px">
+  <div class="container">
+    <div class="row">
+      <div
+        class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mt-3"
+      >
+        <span class="news-header-title">{{ "news.news" | translate }}</span>
+      </div>
+      <div
+        class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 mt-5 text-to-left"
+      >
+        <span class="news-header-text">
+          {{ "news.description" | translate }}
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="news-container container-to-center">
+  <div class="news-body">
+    <div
+      class="container margin-bottom-64"
+      *ngFor="let news of newsList | slice : 0 : max"
+    >
+      <div class="row">
+        <div
+          class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 news-image-container"
+        >
+          <img
+            src="{{ imageUrl }}{{ $any(news).MobileImage }}"
+            alt="News image"
+            class="news-image"
+          />
+        </div>
+        <div
+          class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 news-info"
+        >
+          <h2 class="news-title">
+            {{ $any(news).Title }}
+          </h2>
+          <h6 class="news-date">
+            {{ $any(news).CustomDate | date : "d MMMM, y" }}
+          </h6>
+          <p class="news-text" [innerHTML]="$any(news).Paragraph1"></p>
+          <a
+            (click)="GoToNewsDetails($any(news).EntityId)"
+            class="readmore-link"
+            >{{ "buttons.readMore" | translate }}</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="show-more-classic-container">
+  <button class="show-more-classic" (click)="toggle()">
+    <strong *ngIf="max != newsListLength">{{ "buttons.showMore" | translate }}</strong>
+    <strong *ngIf="max == newsListLength">{{ "buttons.showLess" | translate }}</strong>
+  </button>
+</div>

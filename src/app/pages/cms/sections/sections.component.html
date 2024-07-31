@@ -1,0 +1,208 @@
+<div class="main-con overflow-auto">
+  <div class="row form-group mt-4">
+    <div class="col-2 col-xs-2 col-s-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+      <h1>Sections</h1>
+    </div>
+  </div>
+  <div class="row form-group mt-4">
+    <div class="col-3 col-xs-3 col-s-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+      <select
+        class="form-control"
+        id="languageSelect"
+        (change)="LanguageSelectionChange($event)"
+      >
+        <option value="" selected="selected" disabled="disabled">
+          Select Language
+        </option>
+        <option *ngFor="let language of languages" [value]="language.Id">
+          {{ language.title }}
+        </option>
+        <!--<option value="-1">Select Business Line</option>
+        <option value="1">General Contracting</option>
+        <option value="2">Electro-mechanical Contracting</option>
+        <option value="3">Hard and Soft Facility Management</option>
+        <option value="4">Utility Services</option>-->
+      </select>
+    </div>
+    <div class="col-9 col-xs-9 col-s-9 col-sm-9 col-md-9 col-lg-9 col-xl-9">
+      <button
+        type="button"
+        class="btn btn-secondary buttons"
+        (click)="AddSection()"
+      >
+        <i class="bi bi-plus"> </i>
+      </button>
+    </div>
+  </div>
+
+  <!--Add section button code, starts here-->
+  <!--<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <button
+          type="button"
+          class="btn btn-secondary buttons"
+          (click)="AddSection()"
+        >
+          <i class="bi bi-plus"> </i>
+        </button>
+      </div>
+    </div>
+  </div>-->
+  <!--Add section button code, ends here-->
+
+  <!--Sections list table, code starts here-->
+  <table class="table align-middle mb-0 bg-white mt-2 overflow-auto">
+    <thead class="bg-light">
+      <tr>
+        <th>Section Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Language</th>
+        <th class="text-nowrap">Created Date</th>
+        <!--<th class="text-nowrap">Created By User</th>-->
+        <th class="text-nowrap">Updated Date</th>
+        <!--<th class="text-nowrap">Updated By User</th>-->
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let section of sections" class="h-auto">
+        <td>{{ section.SectionId }}</td>
+        <td class="mr-2">
+          <div class="d-flex align-items-center">
+            <!--<img
+              src="{{ imageUrl }}{{ section.Image }}"
+              alt=""
+              style="width: 45px; height: 45px"
+              class="rounded-circle"
+            />-->
+            <div class="ms-3 mr-2">
+              <p class="fw-bold mb-1 text-wrap mr-2">
+                {{ section.Title }}
+              </p>
+              <!--<p class="text-muted mb-0">john.doe@gmail.com</p>-->
+            </div>
+          </div>
+        </td>
+        <td>
+          <p class="fw-normal mb-1 text-wrap overflow-auto">
+            {{ section.Description | slice : 0 : 10 }}...
+            <a
+              data-bs-toggle="modal"
+              data-bs-target="#descriptionModal"
+              class="btn btn-link btn-sm btn-rounded"
+              (click)="
+                GoToDescriptionModal(
+                  'Description: ' + section.Title,
+                  section.Description
+                )
+              "
+              >Read More</a
+            >
+          </p>
+          <!--<p class="text-muted mb-0">IT department</p>-->
+        </td>
+
+        <!--<td>
+              <span class="badge badge-success rounded-pill d-inline">Active</span>
+            </td>-->
+        <td *ngIf="section.LanguageId == 2">English</td>
+        <td *ngIf="section.LanguageId == 3">French</td>
+        <td *ngIf="section.LanguageId == 1">Arabic</td>
+        <td>{{ section.CreatedDate | date : "dd/MM/yyyy" }}</td>
+        <!--<td>{{ section.CreatedByUserId }}</td>-->
+        <td>{{ section.UpdatedDate | date : "dd/MM/yyyy" }}</td>
+        <!--<td>{{ section.UpdatedByUserId }}</td>-->
+        <td>
+          <tr>
+            <td>
+              <button
+                type="button"
+                class="btn btn-link btn-sm btn-rounded"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Edit Section"
+                (click)="EditSection(section.SectionId)"
+              >
+                <i class="bi bi-pencil-square"></i>
+              </button>
+            </td>
+            <!--<td>
+              <button
+                type="button"
+                class="btn btn-link btn-sm btn-rounded"
+                (click)="RemoveSection(section.SectionId)"
+              >
+                <i class="bi bi-trash"></i>
+              </button>
+            </td>-->
+            <td>
+              <button
+                type="button"
+                class="btn btn-link btn-sm btn-rounded"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Add Section Entity"
+                (click)="AddSubSection(section.SectionId)"
+              >
+                <i class="bi bi-subtract"></i>
+              </button>
+            </td>
+          </tr>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!--Sections list table, code ends here-->
+</div>
+
+<!-- Large modal, Description modal, code starts here -->
+<!--<section>
+  <div
+    class="modal fade bd-example-modal-xl"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="myLargeModalLabel"
+    aria-hidden="true"
+    id="descriptionModal"
+  >
+    <div class="modal-dialog modal-xl modal-dialog-centered mw-100 w-50">
+      <div class="modal-content">
+        <h1>Home Image Description</h1>
+        <p>
+          {{ description }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>-->
+<!-- Large modal, Description modal, code ends here -->
+
+<!-- Modal -->
+<!--<div class="modal fade" id="deleteModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="close-modal">
+          Ignore
+        </button>
+        <button type="button" class="btn btn-danger">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>-->

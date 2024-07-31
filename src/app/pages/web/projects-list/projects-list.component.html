@@ -1,0 +1,75 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-12 col-lg-5 col-s-12 col-sm-12 col-xl-5">
+        <h1 class="projects-page-title text-nowrap">Projects</h1>
+      </div>
+      <div class="col-12 col-md-12 col-lg-7 col-s-12 col-sm-12 col-xl-7">
+        <p class="projects-page-text">
+          Discover our diverse portfolio of projects, showcasing engineering
+          excellence and innovative solutions driving industry standards
+          forward.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="row">
+      <div
+        class="col-6 col-md-6 col-lg-6 col-s-12 col-sm-12 col-xl-6 project-images-box"
+      >
+        <!--<img
+          src="./assets/icons/facility_services_white.svg"
+          alt="Business Line icon"
+          class="projects-icon teal-background"
+        />-->
+
+        <img
+          *ngIf="expertiseId == 7"
+          src="./assets/icons/engineering_contracting_white.svg"
+          alt="Business Line icon"
+          class="projects-icon red-background"
+        />
+        <img
+          *ngIf="expertiseId == 6"
+          src="./assets/icons/electro_mechincal_white.svg"
+          alt="Business Line icon"
+          class="projects-icon cerulean-background"
+        />
+        <img
+          *ngIf="expertiseId == 9"
+          src="./assets/icons/facility_services_white.svg"
+          alt="Business Line icon"
+          class="projects-icon teal-background"
+        />
+        <img
+          *ngIf="expertiseId == 12"
+          src="./assets/icons/new icon for Utility Services.jpg"
+          alt="Business Line icon"
+          class="projects-icon green-background"
+        />
+
+        <h6 class="projects-title text-nowrap">
+          Lusail Marina District Cooling Plant
+        </h6>
+        <br />
+        <span class="projects-sub-text">Qatar</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-to-center w-100">
+    <button class="show-more-btn">
+      <strong class="show-more-text">SHOW MORE</strong>
+    </button>
+  </div>
+  <!--<div style="
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+  "
+  >
+        <button class="show-more-proj-btn">Show more</button></div>
+    </div>-->
+</section>

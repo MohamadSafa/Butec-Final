@@ -1,0 +1,170 @@
+<form class="main-con">
+  <div class="row form-group mt-4">
+    <div class="col-2 col-xs-2 col-s-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+      <h1>Home</h1>
+    </div>
+  </div>
+  <div class="row form-group mt-4">
+    <div class="col-3 col-xs-3 col-s-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+      <select
+        class="form-control"
+        id="languageSelect"
+        (change)="LanguageSelectionChange($event)"
+      >
+        <option value="" selected="selected" disabled="disabled">
+          Select Language
+        </option>
+        <option *ngFor="let language of languages" [value]="language.Id">
+          {{ language.title }}
+        </option>
+        <!--<option value="-1">Select Business Line</option>
+        <option value="1">General Contracting</option>
+        <option value="2">Electro-mechanical Contracting</option>
+        <option value="3">Hard and Soft Facility Management</option>
+        <option value="4">Utility Services</option>-->
+      </select>
+    </div>
+    <div
+      class="col-9 col-xs-9 col-s-9 col-sm-9 col-md-9 col-lg-9 col-xl-9 text-center"
+    >
+      <button
+        type="button"
+        class="btn btn-secondary buttons"
+        (click)="AddHome()"
+        style="float: right"
+      >
+        <i class="bi bi-plus"> </i>
+      </button>
+    </div>
+  </div>
+  <div class="row form-group mt-4 w-100">
+    <div class="col-md-12">
+      <table class="table align-middle mb-0 bg-white mt-2 overflow-auto">
+        <thead class="bg-light">
+          <tr>
+            <th class="text-nowrap">Title</th>
+            <th class="text-nowrap">Sub Title</th>
+            <th class="text-nowrap">Description</th>
+            <th class="text-nowrap">Language</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of homeItems">
+            <td class="mr-2">
+              <div class="d-flex align-items-center">
+                <img
+                  src="{{ imageUrl }}{{ item.Image }}"
+                  alt="Home Main Image"
+                  class="rounded-circle img-fluid table-img"
+                />
+                <div class="ms-3 mr-2">
+                  <p
+                    class="fw-bold mb-1 text-wrap mr-2"
+                    [innerHtml]="item.Title"
+                  ></p>
+                  <!--<p class="fw-bold mb-1 text-wrap mr-2">Project Name</p>-->
+                  <!--<p class="text-muted mb-0">john.doe@gmail.com</p>-->
+                </div>
+              </div>
+            </td>
+            <td [innerHtml]="item.SubTitle"></td>
+            <td>
+              <p
+                class="fw-normal mb-1 text-wrap overflow-auto"
+                [innerHtml]="item.Paragraph1 | slice : 0 : 10"
+              ></p>
+              <a
+                data-bs-toggle="modal"
+                data-bs-target="#descriptionModal"
+                class="btn btn-link btn-sm btn-rounded"
+                (click)="
+                  GoToDescriptionModal(
+                    'Description: ' + item.Title,
+                    item.Paragraph1
+                  )
+                "
+                >Read More</a
+              >
+              <!--<p class="fw-normal mb-1 text-wrap overflow-auto">
+                  Masdar and Bee’ah jointly developed the first Waste-to-Energy
+                  plant in the United Arab Emirates.
+                  <a
+                    data-bs-toggle="modal"
+                    data-bs-target="#descriptionModal"
+                    class="btn btn-link btn-sm btn-rounded"
+                    >Read More</a
+                  >
+                </p>-->
+              <!--<p class="text-muted mb-0">IT department</p>-->
+            </td>
+            <td *ngIf="item.LanguageId == 2">English</td>
+            <td *ngIf="item.LanguageId == 3">French</td>
+            <td *ngIf="item.LanguageId == 1">Arabic</td>
+            <td>
+              <tr>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-link btn-sm btn-rounded"
+                    (click)="EditHomeItems(item.EntityId)"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="bottom"
+                    title="Edit Home Entity"
+                  >
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-link btn-sm btn-rounded"
+                    (click)="RemoveHomeItems(item.EntityId)"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="bottom"
+                    title="Remove Home Entity"
+                  >
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-link btn-sm btn-rounded"
+                    (click)="DuplicateHome(item.EntityId)"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="bottom"
+                    title="Translate Home Entity"
+                  >
+                    <i class="bi bi-translate"></i>
+                  </button>
+                </td>
+              </tr>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</form>
+
+<!-- Large modal -->
+<!--<section>
+  <div
+    class="modal fade bd-example-modal-xl"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="myLargeModalLabel"
+    aria-hidden="true"
+    id="descriptionModal"
+  >
+    <div class="modal-dialog modal-xl modal-dialog-centered mw-100 w-50">
+      <div class="modal-content">
+        <h1>Home Image Description</h1>
+        <p>
+          {{ modalDescription }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>-->

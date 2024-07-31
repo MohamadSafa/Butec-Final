@@ -1,0 +1,38 @@
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 1); /* semi-transparent background */
+    z-index: 9999; /* ensure it's on top */
+  }
+  
+  .loading-logo {
+    width: 100px; /* adjust size as needed */
+    height: auto;
+    display: none;
+  }
+  
+  .spinner {
+    border: 4px solid rgba(84, 79, 79, 0.1);
+    border-left-color: #f9a31a;
+    border-radius: 50%;
+    width: 72px;
+    height: 72px;
+    animation: spin 1s linear infinite;
+    /* margin-left: 20px; */
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  

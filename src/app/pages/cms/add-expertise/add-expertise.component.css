@@ -1,0 +1,26 @@
+.main-con {
+  margin-left: 320px;
+  /* height: calc(100vh - 110px); */
+
+  margin-top: 80px;
+  padding: 10px 18px;
+  transition: margin-left 0.5s;
+}
+/* main-content */
+
+/* image size */
+.imagesize {
+  height: 100px;
+  width: 100px;
+}
+/* image size */
+@media screen and (max-width: 500px) {
+  .main-con {
+    margin-left: 0px;
+
+    margin-top: 80px;
+    padding: 10px 18px;
+    transition: margin-left 0.5s;
+    overflow-y: auto;
+  }
+}

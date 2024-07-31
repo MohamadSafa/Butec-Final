@@ -1,0 +1,177 @@
+<header [ngStyle]="{ background: getPageColor(), position: GetNavPosition() }">
+  <img
+    src="./assets/img/logo-en.svg"
+    alt="logo image"
+    class="logo"
+    style="z-index: 100;"
+    (click)="GoToHomePage()"
+  />
+  <input
+  type="checkbox"
+  id="menu-bar"
+  style="position: absolute; right: 20px; display: none"
+/>
+<div style="position: absolute; right: 20px">
+  <label for="menu-bar">
+    <img
+      src="./assets/icons/hamb-line.svg"
+      alt="logo image"
+      style="background: #000000"
+      id="menuImage"
+      (click)="ChangeImageSRC(isOpen)"
+    />
+  </label>
+</div>  
+  <nav class="navbar" id="nav">
+    <ul>
+      <li [class.active2]="isActive('/Expertise?expertiseId=7&sectionProjectId=8')"
+          (mouseover)="over('Business Lines')"
+          (mouseout)="out('Business Lines')"
+        >
+        <a href="javascript:void(0)">
+          <!-- Areas <span style="text-transform: lowercase;">of</span> Expertise -->
+          {{ "header.areasOfExpertise.areasOfExpertise" | translate }}
+          <img
+            src="./assets/icons/arrow_down_white.svg"
+            alt="Down arrow"
+            class="arrow-down"
+        /></a>
+        <ul
+        id="Business Lines"
+         [ngStyle]="{ 'background-color': getPageColor() }"
+         >
+          <li class="header-first-child">
+            <a (click)="GoToPage('Engineering and Contracting')">
+              {{
+                "header.areasOfExpertise.engineeringAndContracting" | translate
+              }}
+            </a>
+          </li>
+          <li class="header-first-child">
+            <a (click)="GoToPage('Electro-Mechanical Solutions')">
+              {{
+                "header.areasOfExpertise.electroMechanicalSolutions" | translate
+              }}
+            </a>
+            <!--<a [routerLink]="['/', 'Electro-Mechanical']"
+              >Electro-Mechanical Solutions</a
+            >-->
+          </li>
+          <li class="header-first-child">
+            <a (click)="GoToPage('Facility Services')">
+              {{
+                "header.areasOfExpertise.facilityServices" | translate
+              }}
+            </a>
+            <!--<a [routerLink]="['/', 'Facility-Services']">Facility Services</a>-->
+          </li>
+          <li class="header-first-child">
+            <a (click)="GoToPage('Utility Services')">
+              {{
+                "header.areasOfExpertise.utilityServices" | translate
+              }}
+            </a>
+            <!--<a [routerLink]="['/', 'Utility-Services']">Utility Services</a>-->
+          </li>
+        </ul>
+      </li>
+      <li [class.active1]="isActive('/List-Projects')" >
+        <a [routerLink]="['/', 'List-Projects']">{{
+          "header.projects" | translate
+        }}</a>
+      </li>
+      <li [class.active2]="isActive('/Leadership')"
+      (mouseover)="over('About')" (mouseout)="out('About')">
+        <a href="javascript:void(0)">
+          {{ "header.about.about" | translate}}
+          <img
+            src="./assets/icons/arrow_down_white.svg"
+            alt="Down arrow"
+            class="arrow-down"
+        /></a>
+        <ul id="About" [ngStyle]="{ 'background-color': getPageColor() }">
+          <li class="header-first-child">
+            <a [routerLink]="['/', 'Leadership']">
+              {{
+                "header.about.leadership" | translate
+              }}
+            </a>
+          </li>
+          <li class="header-first-child">
+            <a [routerLink]="['/', 'Story']">{{
+              "header.about.theStory" | translate
+            }}</a>
+          </li>
+          <li class="header-first-child">
+            <a [routerLink]="['/', 'why-choose-us']">{{
+              "header.about.whyChooseUs" | translate
+            }}</a>
+          </li>
+        </ul>
+      </li>
+      <li [class.active1]="isActive('/List-News')">
+        <a [routerLink]="['/', 'List-News']">{{ "header.news" | translate }}</a>
+      </li>
+      <li [class.active2]="isActive('/Butec-Life')"
+       (mouseover)="over('Careers')" (mouseout)="out('Careers')">
+        <a href="javascript:void(0)"
+          >{{ "header.careers.careers" | translate}}<img
+            src="./assets/icons/arrow_down_white.svg"
+            alt="Down arrow"
+            class="arrow-down"
+        /></a>
+        <ul id="Careers" [ngStyle]="{ 'background-color': getPageColor() }">
+          <li><a [routerLink]="['/', 'Butec-Life']">{{
+            "header.careers.lifeAtButec" | translate
+          }}</a></li>
+          <li><a [routerLink]="['/', 'Butec-Academy']">{{
+            "header.careers.butecAcademy" | translate
+          }}</a></li>
+          <li><a [routerLink]="['/', 'Positions']">{{
+            "header.careers.openPositions" | translate
+          }}</a></li>
+        </ul>
+      </li>
+      <li [class.active1]="isActive('/Contact')">
+        <a [routerLink]="['/', 'Contact']">{{
+          "header.contact" | translate
+        }}</a>
+      </li>
+      <li (mouseover)="over('Languages')" (mouseout)="out('Languages')">
+        <a href="javascript:void(0)"
+          >{{ selectedLanguage }}
+          <img
+            src="./assets/icons/arrow_down_white.svg"
+            alt="Down arrow"
+            class="arrow-down"
+        /></a>
+        <ul id="Languages" [ngStyle]="{ 'background-color': getPageColor() }">
+          <li>
+            <a href="javascript:void(0)" (click)="switchLanguage('english')"> 
+              {{
+                "languages.english" | translate
+              }}
+            </a>
+          </li>
+          <!-- <li>
+            <a href="javascript:void(0)" (click)="switchLanguage('arabic')">
+              {{
+                "languages.arabic" | translate
+              }}
+            </a>
+          </li> -->
+          <li>
+            <a href="javascript:void(0)" (click)="switchLanguage('french')">
+              {{
+                "languages.french" | translate
+              }}
+            </a>
+          </li>
+          <!-- <li><a href="javascript:void(0)">English</a></li> -->
+          <!-- <li><a href="javascript:void(0)">Arabic</a></li>
+          <li><a href="javascript:void(0)">French</a></li> -->
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>

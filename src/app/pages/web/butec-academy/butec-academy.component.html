@@ -1,0 +1,74 @@
+<section class="header-container">
+  <div class="header-img-container">
+    <img
+      src="./assets/images/Careers-Main-Image.webp"
+      alt="Business Line image"
+      class="header-img img-fluid desktop-image"
+    />
+    <img
+      src="./assets/images/academy-Mobile.jpg"
+      alt="Business Line image"
+      class="header-img img-fluid mobile-image"
+    />
+  </div>
+
+  <div class="header-titles-container">
+    <div class="header-titles-body gold-left-border">
+      <div class="header-titles-content">
+        <h2 class="header-page-title">
+          {{"butecAcademy.careers" | translate}}
+        </h2>
+        <h2 class="header-project-title">
+          {{"butecAcademy.butecAcademy" | translate}}
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-text-container">
+  <div class="page-text-body">
+    <p class="summary-paragraph summary-paragraph2">
+      {{"butecAcademy.butecAcademyDescription" | translate}}
+    </p>
+    <p class="page-paragraph-desc margin-top-32 margin-bottom-12">
+      {{"butecAcademy.butecAcademyGoals.butecAcademyGoalsSummary" | translate}}
+    </p>
+    <div class="life-bullets-container" *ngIf="languageId == 2">
+      <ul class="yellow-bullets-ul page-paragraph-desc">
+        <li>{{ "butecAcademy.butecAcademyGoals.knowledge" | translate }}</li>
+        <li>
+          {{ "butecAcademy.butecAcademyGoals.capacity" | translate }}
+        </li>
+        <!--<li>{{ "butecAcademy.butecAcademyGoals.experience" | translate }}</li>
+        <li>
+          {{ "butecAcademy.butecAcademyGoals.efficiency" | translate }}
+        </li>
+        <li>{{ "butecAcademy.butecAcademyGoals.career" | translate }}</li>-->
+      </ul>
+    </div>
+    <div class="life-img-container margin-top-64 margin-bottom-64 text-to-left">
+      <img
+        src="./assets/images/Careers-sub.webp"
+        alt="Careers image"
+        class="page-img img-fluid"
+      />
+    </div>
+    <p class="page-paragraph-desc margin-bottom-64">
+      {{ "butecAcademy.trainingModules" | translate }}
+    </p>
+
+    <div class="multi-gray-box-container container-to-center">
+      <div class="multi-gray-box-content">
+        <h6 class="multi-gray-box-title">
+          <strong>{{ "butecAcademy.joinOurRanks" | translate }}</strong>
+        </h6>
+        <div>
+          <button class="yellow-browse-btn" (click)="GotoPostionsPage()">
+            <strong class="gray-box-btn-text">{{ "buttons.browsePositions" | translate }}</strong>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

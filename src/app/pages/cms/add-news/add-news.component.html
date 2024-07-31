@@ -1,0 +1,334 @@
+<form class="main-con">
+  <div>
+    <h1>{{ buttonName }} News</h1>
+  </div>
+  <div class="row form-group mt-4">
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <label for="newsTitleInput">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="titleInput"
+        name="titleInput"
+        placeholder="News title"
+        [(ngModel)]="title"
+      />
+      <!--<form [formGroup]="titleForm">
+        <div class="editor">
+          <ngx-editor-menu [editor]="titleEditor" [toolbar]="toolbar">
+          </ngx-editor-menu>
+          <ngx-editor
+            [editor]="titleEditor"
+            formControlName="titleEditorContent"
+            [(ngModel)]="title"
+          >
+          </ngx-editor>
+        </div>
+      </form>-->
+    </div>
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <label for="languageSelect">Language</label>
+      <select
+        class="form-control"
+        id="languageSelect"
+        [(ngModel)]="languageId"
+        name="languageSelect"
+        (change)="LanguageSelectionChange($event)"
+      >
+        <option
+          *ngIf="newsId == null"
+          value=""
+          selected="selected"
+          disabled="disabled"
+        >
+          Select Language
+        </option>
+        <option *ngFor="let language of languages" [value]="language.Id">
+          {{ language.title }}
+        </option>
+        <!-- <option value="3">French</option>
+      <option value="1">Arabic</option> -->
+      </select>
+    </div>
+  </div>
+  <div class="row form-group mt-4">
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <label for="interviewDateInput">Interview Date</label>
+      <input
+        type="date"
+        class="form-control datetimepicker-input"
+        id="interviewDateInput"
+        placeholder="Date"
+        name="Date"
+        [(ngModel)]="interviewDate"
+      />
+    </div>
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <label for="locationSelect">Location</label>
+      <select
+        class="form-control"
+        id="locationSelect"
+        name="locationSelect"
+        [(ngModel)]="locationId"
+        (change)="LocationSelectionChange($event)"
+      >
+        <option
+          *ngIf="newsId == null"
+          value=""
+          selected="selected"
+          disabled="disabled"
+        >
+          Select Location
+        </option>
+        <option *ngFor="let location of locations" [value]="location.Id">
+          {{ location.title }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="row form-group mt-4">
+    <div class="form-group">
+      <fieldset class="form-group">
+        <label>Main Image</label>
+        <!--{{ imageError }}-->
+        <div class="custom-file fileInputProfileWrap">
+          <input
+            type="file"
+            (change)="OnFileChange($event)"
+            class="fileInputProfile form-control"
+          />
+          <div class="img-space mt-2" id="image">
+            <ng-container *ngIf="isImageSaved; else elseTemplate">
+              <img
+                class="imagesize img-responsive"
+                id="chosenImage"
+                alt="No Image"
+                [src]="cardImageBase64"
+              />
+            </ng-container>
+            <ng-template #elseTemplate>
+              <img
+                *ngIf="newsId == null || image == null || image == ''"
+                src="./../../assets/img/image_placeholder.png"
+                class="imagesize img-responsive"
+                alt="No Image"
+              />
+              <img
+                *ngIf="newsId != null && image != null && image != ''"
+                src="{{ image }}"
+                class="imagesize img-responsive"
+                alt="No Image"
+              />
+            </ng-template>
+          </div>
+        </div>
+      </fieldset>
+      <!--<label for="imageInput">Project Image</label>&nbsp;
+        <input
+          type="file"
+          class="form-control-file"
+          id="imageInput"
+          (change)="OnFileChange($event)"
+        />&nbsp;-->
+    </div>
+  </div>
+  <div class="row form-group mt-4">
+    <div class="form-group">
+      <fieldset class="form-group">
+        <label>Mobile Image</label>
+        <!--{{ imageError }}-->
+        <div class="custom-file fileInputProfileWrap">
+          <input
+            type="file"
+            (change)="OnMobileFileChange($event)"
+            class="fileInputProfile form-control"
+          />
+          <div class="img-space mt-2" id="mobileImage">
+            <ng-container *ngIf="isMobileImageSaved; else elseMobileTemplate">
+              <img
+                class="imagesize img-responsive"
+                id="chosenImage"
+                alt="No Image"
+                [src]="mobileImageBase64"
+              />
+            </ng-container>
+            <ng-template #elseMobileTemplate>
+              <img
+                *ngIf="
+                  newsId == null || mobileImage == null || mobileImage == ''
+                "
+                src="./../../assets/img/image_placeholder.png"
+                class="imagesize img-responsive"
+                alt="No Image"
+              />
+              <img
+                *ngIf="
+                  newsId != null && mobileImage != null && mobileImage != ''
+                "
+                src="{{ mobileImage }}"
+                class="imagesize img-responsive"
+                alt="No Image"
+              />
+            </ng-template>
+          </div>
+        </div>
+      </fieldset>
+      <!--<label for="imageInput">Project Image</label>&nbsp;
+        <input
+          type="file"
+          class="form-control-file"
+          id="imageInput"
+          (change)="OnFileChange($event)"
+        />&nbsp;-->
+    </div>
+  </div>
+  <!--<div class="row form-group mt-4">
+    <div
+      class="custom-dropzone"
+      ngx-dropzone
+      [accept]="'image/*'"
+      (change)="onSelect($event)"
+    >
+      <ngx-dropzone-label>
+        <div>
+          <h2>News Sub Images</h2>
+        </div>
+      </ngx-dropzone-label>
+      <ngx-dropzone-image-preview
+        ngProjectAs="ngx-dropzone-preview"
+        *ngFor="let f of files"
+        [file]="f"
+        [removable]="true"
+        (removed)="onRemove(f)"
+      >
+        <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+      </ngx-dropzone-image-preview>
+    </div>
+  </div>-->
+  <div class="row form-group mt-4">
+    <div
+      class="custom-dropzone"
+      ngx-dropzone
+      [expandable]="true"
+      [accept]="'image/*'"
+      (change)="onSelect($event)"
+    >
+      <ngx-dropzone-label>
+        <div>
+          <h2>News Sub Images</h2>
+        </div>
+      </ngx-dropzone-label>
+      <ngx-dropzone-image-preview
+        ngProjectAs="ngx-dropzone-preview"
+        *ngFor="let f of files"
+        [file]="f"
+        [removable]="true"
+        (removed)="onRemove(f)"
+      >
+        <ngx-dropzone-label *ngIf="newsId == null"
+          >{{ f.name }} ({{ f.type }})</ngx-dropzone-label
+        >
+      </ngx-dropzone-image-preview>
+    </div>
+  </div>
+  <div class="row form-group mt-4">
+    <div
+      class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
+    >
+      <label for="imageSubTitleTxtArea">Main Image SubTitle</label>
+      <!--<textarea
+        class="form-control"
+        id="imageSubTitleTxtArea"
+        rows="5"
+        name="imageSubTitle"
+        [(ngModel)]="imageSubTitle"
+      ></textarea>-->
+      <form [formGroup]="paragraph1Form">
+        <div class="editor">
+          <ngx-editor-menu [editor]="paragraph1Editor" [toolbar]="toolbar">
+          </ngx-editor-menu>
+          <ngx-editor
+            [editor]="paragraph1Editor"
+            formControlName="paragraph1EditorContent"
+            [(ngModel)]="paragraph1"
+          >
+          </ngx-editor>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row form-group mt-4">
+    <div
+      class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
+    >
+      <label for="summaryTxtArea">Summary</label>
+      <!--<textarea
+        class="form-control"
+        id="summaryTxtArea"
+        rows="5"
+        name="summaryTxtArea"
+        [(ngModel)]="summary"
+      ></textarea>-->
+      <form [formGroup]="paragraph2Form">
+        <div class="editor">
+          <ngx-editor-menu [editor]="paragraph2Editor" [toolbar]="toolbar">
+          </ngx-editor-menu>
+          <ngx-editor
+            [editor]="paragraph2Editor"
+            formControlName="paragraph2EditorContent"
+            [(ngModel)]="paragraph2"
+          >
+          </ngx-editor>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row form-group mt-4">
+    <div
+      class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
+    >
+      <label for="descriptionTxtArea">Description</label>
+      <!--<textarea
+        class="form-control"
+        id="descriptionTxtArea"
+        rows="5"
+        name="descriptionTxtArea"
+        [(ngModel)]="description"
+      ></textarea>-->
+      <form [formGroup]="paragraph3Form">
+        <div class="editor">
+          <ngx-editor-menu [editor]="paragraph3Editor" [toolbar]="toolbar">
+          </ngx-editor-menu>
+          <ngx-editor
+            [editor]="paragraph3Editor"
+            formControlName="paragraph3EditorContent"
+            [(ngModel)]="paragraph3"
+          >
+          </ngx-editor>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!--<div class="row form-group mt-4">
+    <div class="col-md-12">
+      <label for="notesTxtArea">Notes</label>
+      <textarea
+        class="form-control"
+        id="notesTxtArea"
+        rows="5"
+        name="notesTxtArea"
+        [(ngModel)]="notes"
+      ></textarea>
+    </div>
+  </div>-->
+  <div class="row form-group mt-4">
+    <div class="m-t-20 text-center">
+      <a
+        class="btn btn-primary btn-lg"
+        (click)="AddEditNews()"
+        href="javascript:void(0)"
+        >{{ buttonName }} News</a
+      >
+    </div>
+  </div>
+</form>

@@ -1,0 +1,326 @@
+<form class="main-con">
+  <div>
+    <h1>{{ buttonName }} Vacancy</h1>
+  </div>
+  <div class="row form-group mt-4">
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <label for="vacancyTitleInput">Title</label>
+      <input
+        #vacancyTitleInput
+        type="text"
+        class="form-control"
+        id="vacancyTitleInput"
+        placeholder="Title"
+        [(ngModel)]="vacancyTitle"
+        name="vacancyTitle"
+      />
+    </div>
+
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <label for="languageSelect">Language</label>
+      <select
+        class="form-control"
+        id="languageSelect"
+        [(ngModel)]="languageId"
+        name="languageSelect"
+        (change)="LanguageSelectionChange($event)"
+      >
+        <option
+          *ngIf="vacancyId == null"
+          value=""
+          selected="selected"
+          disabled="disabled"
+        >
+          Select Language
+        </option>
+        <option *ngFor="let language of languages" [value]="language.Id">
+          {{ language.title }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="row form-group mt-4">
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <label for="businessLineSelect">Business Line</label>
+      <select
+        class="form-control"
+        id="businessLineSelect"
+        [(ngModel)]="businessLineId"
+        name="businessLineId"
+        (change)="BusinessLineSelectionChange($event)"
+      >
+        <option value="" selected="selected" disabled="disabled">
+          Select Business Line
+        </option>
+        <option
+          *ngFor="let businessLine of businessLines"
+          [value]="businessLine.Id"
+        >
+          {{ businessLine.title }}
+        </option>
+      </select>
+    </div>
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <label for="locationSelect">Location</label>
+      <select
+        class="form-control"
+        id="locationSelect"
+        name="locationSelect"
+        [(ngModel)]="locationId"
+        (change)="LocationSelectionChange($event)"
+      >
+        <option
+          *ngIf="vacancyId == null"
+          value=""
+          selected="selected"
+          disabled="disabled"
+        >
+          Select Location
+        </option>
+        <option *ngFor="let location of locations" [value]="location.Id">
+          {{ location.title }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="row form-group mt-5 border mb-5" style="border-color: #dee2e6">
+    <div
+      class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
+    >
+      <h2>Job Specifications</h2>
+      <div>
+        <form [formGroup]="specificationsForm">
+          <div
+            *ngFor="
+              let result of SpecificationsResultsArray.controls;
+              let i = index
+            "
+            formArrayName="specificationsResults"
+          >
+            <div [formGroupName]="i" class="p-5 m-3 bg-light">
+              <div class="form-group">
+                <div class="pb-4">
+                  <h3 class="d-inline">Job Specification {{ i + 1 }}</h3>
+                  <button
+                    *ngIf="i > 0"
+                    type="button"
+                    class="btn btn-link btn-sm btn-rounded d-inline float-end red-color"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="bottom"
+                    title="Remove Job Sepcifocation {{ i + 1 }}"
+                    (click)="RemoveSpecification(i)"
+                  >
+                    <!--<i class="bi bi-x-circle-fill h3"></i>-->
+                    <i class="bi bi-window-dash h3"></i>
+                  </button>
+                </div>
+                <div>
+                  <label class="mb-2">Title</label>
+                  <input
+                    class="form-control mb-3"
+                    type="text"
+                    value=""
+                    formControlName="title1"
+                  />
+                  <label class="mb-2">Description</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    value=""
+                    formControlName="description1"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group mt-2 w-100">
+            <div class="text-to-center">
+              <button
+                type="button"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Add More Job Sepcifocation"
+                class="btn btn-link btn-sm btn-rounded"
+                (click)="AddSpecification()"
+              >
+                <!-- <i class="bi bi-plus-circle-fill h3"></i> -->
+                <i class="bi bi-window-plus h3"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="row form-group mt-4">
+    <div
+      class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
+    >
+      <label for="descriptionTxtArea">Overview</label>
+      <textarea
+        class="form-control"
+        id="descriptionTxtArea"
+        rows="5"
+        [(ngModel)]="description"
+        name="description"
+      ></textarea>
+    </div>
+  </div>
+  <div class="row form-group mt-5 border mb-5" style="border-color: #dee2e6">
+    <div
+      class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
+    >
+      <h2>Responsibilities</h2>
+      <div>
+        <form [formGroup]="responsibilitiesForm">
+          <div formArrayName="responsibilitiesResults">
+            <div
+              *ngFor="
+                let responsibility of ResponsibilitiesResultsArray().controls;
+                let responsibilityIndex = index
+              "
+            >
+              <div
+                [formGroupName]="responsibilityIndex"
+                class="p-5 m-3 bg-light"
+              >
+                <div class="form-group">
+                  <div class="pb-4">
+                    <h3 class="d-inline">
+                      Responsibility {{ responsibilityIndex + 1 }}
+                    </h3>
+                    <button
+                      *ngIf="responsibilityIndex > 0"
+                      type="button"
+                      class="btn btn-link btn-sm btn-rounded d-inline float-end red-color"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="bottom"
+                      title="Remove Responsibility {{
+                        responsibilityIndex + 1
+                      }}"
+                      (click)="RemoveResponsibility(responsibilityIndex)"
+                    >
+                      <!-- <i class="bi bi-x-circle-fill h3"></i> -->
+                      <i class="bi bi-window-dash h3"></i>
+                    </button>
+                  </div>
+                  <div>
+                    <label class="mb-2">Title</label>
+                    <input
+                      class="form-control mb-3"
+                      type="text"
+                      value=""
+                      formControlName="title"
+                    />
+                  </div>
+                  <!--<label>Description</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    value=""
+                    formControlName="description"
+                  />-->
+                </div>
+
+                <div formArrayName="descriptions">
+                  <div
+                    *ngFor="
+                      let description of ResponsibilityDescriptions(
+                        responsibilityIndex
+                      ).controls;
+                      let responsibilityDescriptionIndex = index
+                    "
+                  >
+                    <div [formGroupName]="responsibilityDescriptionIndex">
+                      <div class="form-group">
+                        <label class="d-inline">
+                          Description {{ responsibilityDescriptionIndex + 1 }}
+                        </label>
+                        <button
+                          type="button"
+                          class="btn btn-link btn-sm btn-rounded d-inline float-end red-color"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="bottom"
+                          title="Remove Description {{
+                            responsibilityDescriptionIndex + 1
+                          }}"
+                          (click)="
+                            RemoveDescription(
+                              responsibilityIndex,
+                              responsibilityDescriptionIndex
+                            )
+                          "
+                        >
+                          <i class="bi bi-x-circle-fill h3"></i>
+                        </button>
+                        <input
+                          class="form-control mb-3"
+                          type="text"
+                          formControlName="description"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div class="form-row org-desc-parent-margin">
+                    <button
+                      class="btn btn-primary"
+                      (click)="AddDescription(responsibilityIndex)"
+                    >
+                      Add More Description +
+                    </button>
+                  </div> -->
+                  <div class="form-group mt-2 w-100">
+                    <div class="text-to-center">
+                      <button
+                        type="button"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="bottom"
+                        title="Add Description"
+                        class="btn btn-link btn-sm btn-rounded"
+                        (click)="AddDescription(responsibilityIndex)"
+                      >
+                        <i class="bi bi-plus-circle-fill h3"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group mt-2 w-100">
+              <div class="text-to-center">
+                <button
+                  type="button"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="bottom"
+                  title="Add Responsibility"
+                  class="btn btn-link btn-sm btn-rounded"
+                  (click)="AddResponsibility()"
+                >
+                  <!-- <i class="bi bi-plus-circle-fill h3"></i> -->
+                  <i class="bi bi-window-plus h3"></i>
+                </button>
+              </div>
+            </div>
+
+            <!--<div class="form-row org-desc-parent-margin">
+              <button class="btn btn-primary" (click)="AddResponsibility()">
+                Add More Question +
+              </button>
+            </div>-->
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="row form-group mt-4">
+    <div class="m-t-20 text-center">
+      <a
+        class="btn btn-primary btn-lg"
+        (click)="AddVacancy()"
+        href="javascript:void(0)"
+        >{{ buttonName }} Vacancy</a
+      >
+    </div>
+  </div>
+</form>

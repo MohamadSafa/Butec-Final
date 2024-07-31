@@ -1,0 +1,234 @@
+<section class="multi-header-container">
+  <div class="header-img-container">
+    <img
+      src="{{ imageUrl }}{{ image }}"
+      alt="Business Line image"
+      class="header-img img-fluid desktop-image"
+    />
+    <img
+      src="{{ imageUrl }}{{ mobileImage }}"
+      alt="Business Line image"
+      class="header-img img-fluid mobile-image"
+    />
+  </div>
+
+  <div class="header-titles-container">
+    <div
+      *ngIf="expertiseId == 7 || expertiseId == 26 || expertiseId == 45"
+      class="header-icon-container"
+    >
+      <img
+        src="./assets/icons/engineering_contracting_red.svg"
+        alt="Business Line icon"
+        class="header-icon"
+      />
+    </div>
+    <div
+      *ngIf="expertiseId == 6 || expertiseId == 25 || expertiseId == 44"
+      class="header-icon-container"
+    >
+      <img
+        src="./assets/icons/electro_mechincal_cerulean.svg"
+        alt="Business Line icon"
+        class="header-icon"
+      />
+    </div>
+    <div
+      *ngIf="expertiseId == 9 || expertiseId == 28 || expertiseId == 47"
+      class="header-icon-container"
+    >
+      <img
+        src="./assets/icons/facility_services_teal.svg"
+        alt="Business Line icon"
+        class="header-icon"
+      />
+    </div>
+    <div
+      *ngIf="expertiseId == 12 || expertiseId == 31 || expertiseId == 50"
+      class="header-icon-container"
+    >
+      <img
+        src="./assets/icons/new icon for Utility Services.jpg"
+        alt="Business Line icon"
+        class="header-icon"
+      />
+    </div>
+    <div
+      *ngIf="expertiseId == 7 || expertiseId == 26 || expertiseId == 45"
+      class="header-titles-body red-left-border"
+    >
+      <div class="header-titles-content">
+        <h2 class="header-page-title">
+          {{ "expertise.areasOfExpertise" | translate }}
+        </h2>
+        <h2 class="header-project-title" [innerHTML]="title">{{ title }}</h2>
+        <!--<h2 class="header-project-title">Engineering and<br />Contracting</h2>-->
+        <!-- <img
+          src="./assets/icons/engineering_contracting_red.svg"
+          alt="Business Line icon"
+          class="header-icon-media"
+        /> -->
+      </div>
+    </div>
+    <div
+      *ngIf="expertiseId == 6 || expertiseId == 25 || expertiseId == 44"
+      class="header-titles-body cerulean-left-border"
+    >
+      <div class="header-titles-content">
+        <h2 class="header-page-title">
+          {{ "expertise.areasOfExpertise" | translate }}
+        </h2>
+        <h2 class="header-project-title" [innerHTML]="title"></h2>
+        <!--<h2 class="header-project-title">Electro-Mechanical<br />Solutions</h2>-->
+        <!-- <img
+          src="./assets/icons/electro_mechincal_cerulean.svg"
+          alt="Business Line icon"
+          class="header-icon-media"
+        /> -->
+      </div>
+    </div>
+    <div
+      *ngIf="expertiseId == 9 || expertiseId == 28 || expertiseId == 47"
+      class="header-titles-body teal-left-border"
+    >
+      <div class="header-titles-content">
+        <h2 class="header-page-title">
+          {{ "expertise.areasOfExpertise" | translate }}
+        </h2>
+        <h2 class="header-project-title" [innerHTML]="title"></h2>
+        <!--<h2 class="header-project-title">Facility<br />Services</h2>-->
+      </div>
+    </div>
+
+    <div
+      *ngIf="expertiseId == 12 || expertiseId == 31 || expertiseId == 50"
+      class="header-titles-body green-left-border"
+    >
+      <div class="header-titles-content">
+        <h2 class="header-page-title">
+          {{ "expertise.areasOfExpertise" | translate }}
+        </h2>
+        <h2 class="header-project-title" [innerHTML]="title"></h2>
+        <!--<h2 class="header-project-title">Utility<br />Services</h2>-->
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-text-container page-text-container-expertise">
+  <div class="page-text-body">
+    <p
+      class="summary-paragraph shadow-paragraph line-height-1half"
+      [innerHTML]="paragraph1"
+    ></p>
+    <p
+      class="page-paragraph-desc margin-top-32 margin-bottom-64 line-height-half"
+      [innerHTML]="paragraph2"
+    ></p>
+    <div class="text-to-left mini-box-container ml-0">
+      <div class="container w-100 text-to-left margin-left-0">
+        <div class="row">
+          <div
+            *ngFor="let expertiseBox of expertisesBoxes"
+            class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 text-to-center mini-box"
+          >
+            <h5
+              *ngIf="expertiseBox.boxUsed == 1"
+              class="{{ expertiseBox.class1 }}"
+            >
+              <app-animated-number
+                [endValue]="expertiseBox.boxNumber"
+                [suffix]="expertiseBox.suffix"
+              ></app-animated-number>
+            </h5>
+            <p
+              *ngIf="expertiseBox.boxUsed == 1"
+              class="{{ expertiseBox.class2 }}"
+            >
+              {{ expertiseBox.boxText }}
+            </p>
+
+            <h5
+              *ngIf="expertiseBox.boxUsed == 2"
+              class="{{ expertiseBox.class1 }}"
+            >
+              {{ expertiseBox.boxNumber }}
+            </h5>
+            <app-animated-number
+              *ngIf="expertiseBox.boxUsed == 2"
+              class="{{ expertiseBox.class2 }}"
+              [endValue]="expertiseBox.boxText"
+              [suffix]="expertiseBox.suffix"
+            ></app-animated-number>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p
+      class="page-paragraph-desc margin-top-64 line-height-half"
+      [innerHTML]="paragraph3"
+    ></p>
+  </div>
+</section>
+
+<section class="other-container">
+  <h2 class="other-title">{{ "expertise.projects" | translate }}</h2>
+  <div class="other-imgs-container">
+    <div class="container">
+      <div class="row">
+        <div
+          *ngFor="let project of expertiseProjects"
+          class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 other-img-body other-img-space"
+        >
+          <img
+            *ngIf="expertiseId == 7 || expertiseId == 26 || expertiseId == 45"
+            src="./assets/icons/engineering_contracting_white.svg"
+            alt="Business Line icon"
+            class="other-mini-icon red-background other-projects-hover"
+          />
+          <img
+            *ngIf="expertiseId == 6 || expertiseId == 25 || expertiseId == 44"
+            src="./assets/icons/electro_mechincal_white.svg"
+            alt="Business Line icon"
+            class="other-mini-icon cerulean-background other-projects-hover"
+          />
+          <img
+            *ngIf="expertiseId == 9 || expertiseId == 28 || expertiseId == 47"
+            src="./assets/icons/facility_services_white.svg"
+            alt="Business Line icon"
+            class="other-mini-icon teal-background other-projects-hover"
+          />
+          <img
+            *ngIf="expertiseId == 12 || expertiseId == 31 || expertiseId == 50"
+            src="./assets/icons/Utility-Services-Green.svg"
+            alt="Business Line icon"
+            class="other-mini-icon-green green-background"
+          />
+          <a (click)="GoToPage(project.EntityId, project.CategoryId)">
+            <!--<img
+              src="{{ imageUrl }}{{ project.Image }}"
+              alt="Business Line image"
+              class="other-img"
+          />-->
+            <img
+              src="{{ imageUrl }}{{ project.MobileImage }}"
+              alt="Business Line image"
+              class="other-img"
+          /></a>
+
+          <div class="other-info-container">
+            <h6 class="other-info-title">{{ project.Title }}</h6>
+            <p class="other-info-text">{{ project.Location }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-100 text-to-center">
+    <button class="show-more-btn" [routerLink]="['/', 'List-Projects']">
+      <strong class="show-more-text">{{
+        "buttons.showMore" | translate
+      }}</strong>
+    </button>
+  </div>
+</section>

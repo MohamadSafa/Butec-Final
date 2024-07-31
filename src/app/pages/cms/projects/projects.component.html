@@ -1,0 +1,212 @@
+<form class="main-con">
+  <div>
+    <h1>Projects</h1>
+  </div>
+  <div class="row form-group mt-4">
+    <div class="col-3 col-xs-3 col-s-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+      <select
+        class="form-control"
+        id="languageSelect"
+        (change)="LanguageSelectionChange($event)"
+      >
+        <option value="" selected="selected" disabled="disabled">
+          Select Language
+        </option>
+        <option *ngFor="let language of languages" [value]="language.Id">
+          {{ language.title }}
+        </option>
+        <!--<option value="-1">Select Business Line</option>
+        <option value="1">General Contracting</option>
+        <option value="2">Electro-mechanical Contracting</option>
+        <option value="3">Hard and Soft Facility Management</option>
+        <option value="4">Utility Services</option>-->
+      </select>
+    </div>
+    <div class="col-3 col-xs-3 col-s-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+      <select
+        class="form-control"
+        id="businessLineSelect"
+        (change)="BusinessLineSelectionChange($event)"
+      >
+        <option value="" selected="selected" disabled="disabled">
+          Select Business Line
+        </option>
+        <option
+          *ngFor="let businessLine of businessLines"
+          [value]="businessLine.Id"
+        >
+          {{ businessLine.title }}
+        </option>
+        <!--<option value="-1">Select Business Line</option>
+        <option value="1">General Contracting</option>
+        <option value="2">Electro-mechanical Contracting</option>
+        <option value="3">Hard and Soft Facility Management</option>
+        <option value="4">Utility Services</option>-->
+      </select>
+    </div>
+    <div class="col-6 col-xs-6 col-s-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+      <button
+        type="button"
+        class="btn btn-secondary buttons"
+        (click)="AddProject()"
+      >
+        <i class="bi bi-plus"> </i>
+      </button>
+    </div>
+  </div>
+  <div class="row form-group mt-4">
+    <div
+      class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
+    >
+      <table class="table align-middle mb-0 bg-white mt-2 overflow-auto w-100">
+        <thead class="bg-light">
+          <tr>
+            <th class="text-nowrap">Title</th>
+            <th>Description</th>
+            <!--<th class="text-nowrap">Business Line</th>-->
+            <!---<th class="text-nowrap">Role of BUTEC</th>
+            <th class="text-nowrap">Execution Period</th>
+            <th class="text-nowrap">Financing</th>
+            <th class="text-nowrap">Type of Contract</th>
+            <th class="text-nowrap">Contractor for Process</th>
+            <th>Employer</th>
+            <th class="text-nowrap">Delegated Employer</th>-->
+            <th>Location</th>
+            <th>Language</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of projects">
+            <td class="mr-2">
+              <div class="d-flex align-items-center">
+                <img
+                  src="{{ imageUrl }}{{ item.Image }}"
+                  alt="Project Main Image"
+                  class="rounded-circle img-fluid table-img"
+                />
+                <div class="ms-3 mr-2">
+                  <p
+                    class="fw-bold mb-1 text-wrap mr-2"
+                    [innerHTML]="item.Title"
+                  ></p>
+                  <!--<p class="fw-bold mb-1 text-wrap mr-2">Project Name</p>-->
+                  <!--<p class="text-muted mb-0">john.doe@gmail.com</p>-->
+                </div>
+              </div>
+            </td>
+            <td>
+              <p
+                class="fw-normal mb-1 text-wrap overflow-auto"
+                [innerHTML]="item.Paragraph1 | slice : 0 : 10"
+              ></p>
+              <a
+                data-bs-toggle="modal"
+                data-bs-target="#descriptionModal"
+                class="btn btn-link btn-sm btn-rounded"
+                (click)="
+                  GoToDescriptionModal(
+                    'Project: ' + item.Title,
+                    item.Paragraph1
+                  )
+                "
+                >Read More</a
+              >
+              <!--<p class="fw-normal mb-1 text-wrap overflow-auto">
+                Masdar and Bee’ah jointly developed the first Waste-to-Energy
+                plant in the United Arab Emirates.
+                <a
+                  data-bs-toggle="modal"
+                  data-bs-target="#descriptionModal"
+                  class="btn btn-link btn-sm btn-rounded"
+                  >Read More</a
+                >
+              </p>-->
+              <!--<p class="text-muted mb-0">IT department</p>-->
+            </td>
+            <!--<td>
+              <span class="badge badge-success rounded-pill d-inline">Active</span>
+            </td>-->
+            <td>{{ item.Location }}</td>
+            <!--<td>{{ project.RoleofButec }}</td>
+            <td>{{ project.ExecutionPeriod }}</td>
+            <td>{{ project.Financing }}</td>
+            <td>
+              {{ project.TypeofContract }}
+            </td>
+            <td>{{ project.Contractorforprocess }}</td>
+            <td>{{ project.Employer }}</td>
+            <td>{{ project.DelegatedEmployer }}</td>
+            <td>{{ project.Location }}</td>
+            <td>{{ project.DelegatedEmployer }}</td>-->
+            <td *ngIf="item.LanguageId == 2">English</td>
+            <td *ngIf="item.LanguageId == 3">French</td>
+            <td *ngIf="item.LanguageId == 1">Arabic</td>
+            <td>
+              <tr>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-link btn-sm btn-rounded"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="bottom"
+                    title="Edit Project Entity"
+                    (click)="EditProject(item.EntityId)"
+                  >
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-link btn-sm btn-rounded"
+                    (click)="RemoveProject(item.EntityId)"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="bottom"
+                    title="Remove Project Entity"
+                  >
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </td>
+
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-link btn-sm btn-rounded"
+                    (click)="DuplicateEntity(item.EntityId)"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="bottom"
+                    title="Translate Expertise Entity"
+                  >
+                    <i class="bi bi-translate"></i>
+                  </button>
+                </td>
+              </tr>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</form>
+
+<!-- Large modal -->
+<!--<section>
+  <div
+    class="modal fade bd-example-modal-xl"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="myLargeModalLabel"
+    aria-hidden="true"
+    id="descriptionModal"
+  >
+    <div class="modal-dialog modal-xl modal-dialog-centered mw-100 w-50">
+      <div class="modal-content">
+        <h1>Project: {{ modalTitle }}</h1>
+        <p>
+          {{ modalDescription }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>-->

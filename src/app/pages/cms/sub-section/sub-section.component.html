@@ -1,0 +1,275 @@
+<form class="main-con">
+  <div class="row form-group mt-4">
+    <div
+      class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
+    >
+      <h1>{{ sectionTitle }} - {{ sectionLanguage }}</h1>
+    </div>
+  </div>
+  <div class="row form-group mt-4">
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+      <select
+        class="form-control"
+        id="languageSelect"
+        (change)="LanguageSelectionChange($event)"
+      >
+        <option value="" selected="selected" disabled="disabled">
+          Select Language
+        </option>
+        <option *ngFor="let language of languages" [value]="language.Id">
+          {{ language.title }}
+        </option>
+        <!--<option value="-1">Select Business Line</option>
+        <option value="1">General Contracting</option>
+        <option value="2">Electro-mechanical Contracting</option>
+        <option value="3">Hard and Soft Facility Management</option>
+        <option value="4">Utility Services</option>-->
+      </select>
+    </div>
+  </div>
+  <div class="row form-group mt-4">
+    <div
+      class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
+    >
+      <table class="table align-middle mb-0 bg-white mt-2 overflow-auto">
+        <thead class="bg-light">
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Language</th>
+            <th class="text-nowrap">Created Date</th>
+            <!--<th class="text-nowrap">Created By User</th>-->
+            <th class="text-nowrap">Updated Date</th>
+            <!--<th class="text-nowrap">Updated By User</th>-->
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let subsection of subSections">
+            <td class="mr-2">
+              <div class="d-flex align-items-center">
+                <img
+                  src="{{ imageUrl }}{{ subsection.Image }}"
+                  alt="Entity Main Image"
+                  class="rounded-circle img-fluid table-img"
+                />
+                <div class="ms-3 mr-2">
+                  <p
+                    class="fw-bold mb-1 text-wrap mr-2"
+                    [innerHTML]="subsection.Title"
+                  ></p>
+                  <!--<p class="text-muted mb-0">john.doe@gmail.com</p>-->
+                </div>
+              </div>
+            </td>
+            <td>
+              <p
+                class="fw-normal mb-1 text-wrap overflow-auto"
+                [innerHTML]="subsection.Paragraph1 | slice : 0 : 10"
+              ></p>
+              <a
+                data-bs-toggle="modal"
+                data-bs-target="#descriptionModal"
+                class="btn btn-link btn-sm btn-rounded"
+                (click)="
+                  GoToDescriptionModal(
+                    'Description: ' + subsection.Title,
+                    subsection.Paragraph1
+                  )
+                "
+                >Read More</a
+              >
+              <!--<p class="text-muted mb-0">IT department</p>-->
+            </td>
+
+            <!--<td>
+                  <span class="badge badge-success rounded-pill d-inline">Active</span>
+                </td>-->
+            <td *ngIf="subsection.LanguageId == 2">English</td>
+            <td *ngIf="subsection.LanguageId == 3">French</td>
+            <td *ngIf="subsection.LanguageId == 1">Arabic</td>
+            <td>{{ subsection.CreatedDate | date : "dd/MM/yyyy" }}</td>
+            <!--<td>{{ subsection.CreatedByUserId }}</td>-->
+            <td>{{ subsection.UpdatedDate | date : "dd/MM/yyyy" }}</td>
+            <!--<td>{{ subsection.UpdatedByUserId }}</td>-->
+            <td>
+              <tr>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-link btn-sm btn-rounded"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="bottom"
+                    title="Remove Entity from Website"
+                    (click)="RemoveSectionEntity(subsection.sectionEntityId)"
+                  >
+                    <i class="bi bi-dash-circle-fill"></i>
+                  </button>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-link btn-sm btn-rounded"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="bottom"
+                    title="Edit Entity"
+                    (click)="
+                      EditSubSection(subsection.EntityId, subsection.CategoryId)
+                    "
+                  >
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                </td>
+              </tr>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row form-group mt-4">
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+      <select
+        class="form-control"
+        id="businessLineSelect"
+        (change)="EntitySelectionChange($event)"
+      >
+        <option value="" selected="selected" disabled="disabled">
+          Select Entity
+        </option>
+        <option *ngFor="let section of sections" [value]="section.Id">
+          {{ section.title }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="row form-group mt-4">
+    <div
+      class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
+    >
+      <table class="table align-middle mb-0 bg-white mt-2 overflow-auto">
+        <thead class="bg-light">
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Language</th>
+            <th class="text-nowrap">Created Date</th>
+            <!--<th class="text-nowrap">Created By User</th>-->
+            <th class="text-nowrap">Updated Date</th>
+            <!--<th class="text-nowrap">Updated By User</th>-->
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let entity of entities">
+            <td class="mr-2">
+              <div class="d-flex align-items-center">
+                <img
+                  src="{{ imageUrl }}{{ entity.Image }}"
+                  alt="Entity Main Image"
+                  class="rounded-circle img-fluid table-img"
+                />
+                <div class="ms-3 mr-2">
+                  <p
+                    class="fw-bold mb-1 text-wrap mr-2"
+                    [innerHTML]="entity.Title"
+                  ></p>
+                  <!--<p class="text-muted mb-0">john.doe@gmail.com</p>-->
+                </div>
+              </div>
+            </td>
+            <td>
+              <p
+                class="fw-normal mb-1 text-wrap overflow-auto"
+                [innerHTML]="entity.Paragraph1 | slice : 0 : 10"
+              ></p>
+              <a
+                data-bs-toggle="modal"
+                data-bs-target="#descriptionModal"
+                class="btn btn-link btn-sm btn-rounded"
+                (click)="
+                  GoToDescriptionModal(
+                    'Description: ' + entity.Title,
+                    entity.Paragraph1
+                  )
+                "
+                >Read More</a
+              >
+              <!--<p class="text-muted mb-0">IT department</p>-->
+            </td>
+
+            <!--<td>
+                  <span class="badge badge-success rounded-pill d-inline">Active</span>
+                </td>-->
+            <td *ngIf="entity.LanguageId == 2">English</td>
+            <td *ngIf="entity.LanguageId == 3">French</td>
+            <td *ngIf="entity.LanguageId == 1">Arabic</td>
+            <td>{{ entity.CreatedDate | date : "dd/MM/yyyy" }}</td>
+            <!--<td>{{ entity.CreatedByUserId }}</td>-->
+            <td>{{ entity.UpdatedDate | date : "dd/MM/yyyy" }}</td>
+            <!--<td>{{ entity.UpdatedByUserId }}</td>-->
+            <td>
+              <tr>
+                <!--<td>
+                  <button
+                    type="button"
+                    class="btn btn-link btn-sm btn-rounded"
+                    (click)="EditSubSection(subsection.EntityId)"
+                  >
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                </td>-->
+
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-link btn-sm btn-rounded"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="bottom"
+                    title="Add Entity in Website"
+                    (click)="AddSectionEntity(entity.EntityId)"
+                  >
+                    <i class="bi bi-plus-circle-fill"></i>
+                  </button>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-link btn-sm btn-rounded"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="bottom"
+                    title="Edit Entity"
+                    (click)="EditSubSection(entity.EntityId, entity.CategoryId)"
+                  >
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                </td>
+              </tr>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</form>
+
+<!-- Large modal -->
+<!--<section>
+  <div
+    class="modal fade bd-example-modal-xl"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="myLargeModalLabel"
+    aria-hidden="true"
+    id="descriptionModal"
+  >
+    <div class="modal-dialog modal-xl modal-dialog-centered mw-100 w-50">
+      <div class="modal-content">
+        <h1>Home Image Description</h1>
+        <p>
+          {{ dialogDescription }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>-->

@@ -1,0 +1,91 @@
+<section class="multi-details-header-container">
+  <div class="details-header-content">
+    <div class="details-header-body gold-left-border">
+      <a class="detials-header-title move-left-15"
+        ><img
+          src="./assets/icons/back-arrow.svg"
+          alt="back arrow image"
+          class="ic_arrow"
+          (click)="GoBack()"
+        />
+        <span class="detials-header-title"
+          ><strong>{{ "newsDetails.news" | translate }}</strong></span
+        ></a
+      >
+      <div class="margin-bottom-16">
+        <span class="details-header-subtitle">
+          {{ newsTitle }}
+        </span>
+      </div>
+      <div>
+        <span class="details-subtitle">{{
+          newsDate | date : "d MMMM, y"
+        }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="details-header-img-container">
+    <img
+      src="{{ image }}"
+      alt="News Main image"
+      class="details-header-img img-fluid"
+    />
+  </div>
+</section>
+
+<section class="page-text-container">
+  <div class="page-text-body">
+    <p class="news-subtitle line-height-1" [innerHTML]="subTitle"></p>
+    <p class="news-summary line-height-1" [innerHTML]="summary"></p>
+    <p class="news-desc line-height-1" [innerHTML]="description"></p>
+  </div>
+</section>
+
+<section class="page-text-container">
+  <div class="page-row-body">
+    <div class="container">
+      <div class="row">
+        <div
+          *ngFor="let attachment of attachmentsList"
+          class="col-6 col-xs-6 col-s-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 details-img-container"
+        >
+          <img
+            src="{{ imageUrl }}{{ attachment.Name }}"
+            alt="Business Line image"
+            class="details-img img-fluid"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="other-container-news">
+  <h2 class="other-title">{{ "newsDetails.otherNews" | translate }}</h2>
+  <div class="other-imgs-container">
+    <div class="container container-to-center">
+      <div class="row">
+        <div
+          *ngFor="let news of otherNews"
+          class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 other-img-body other-img-space"
+        >
+          <a (click)="GoToNewsDetailsPage(news.EntityId)">
+            <img
+              src="{{ imageUrl }}{{ news.Image }}"
+              alt="Business Line image"
+              class="other-img"
+            />
+          </a>
+          <div class="other-info-container">
+            <h6 class="other-info-title">
+              {{ news.Title }}
+            </h6>
+            <p class="other-info-text">
+              {{ news.CustomDate | date : "d MMMM, y" }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

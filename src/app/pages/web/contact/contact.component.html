@@ -1,0 +1,195 @@
+<div class="scroll-y">
+  <section class="contact-box">
+    <div class="container">
+      <div class="row f-container">
+        <div
+          class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contact-header-container"
+        >
+          <h1 class="contact-title">{{ "contact.strongConnection" | translate }}<br />{{
+            "contact.connection" | translate
+          }}</h1>
+          <p class="contact-text">
+            {{ "contact.nextStep" | translate }}<br />{{
+              "contact.feedbackWithUs" | translate
+            }}
+          </p>
+        </div>
+        <div
+          class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contact-map-container"
+        >
+          <img
+            src="./assets/images/Contact-MapPins-Final-01-01.svg"
+            alt="Contact Map Image"
+            class="contact-map"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="headquarter-container">
+    <h2 class="headquarter-title">
+      {{ "contact.headquarters.headquarters" | translate }}
+    </h2>
+    <div class="container">
+      <div class="row">
+          <div
+          *ngFor="let branch of branchesList | slice : 0 : max"
+          class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 headquarter-box"
+        >
+        <div class="headquarter-box-content">
+          <h6 class="headquarter-box-title">{{ $any(branch).country }}</h6>
+          <p class="headquarter-box-text">
+            {{ $any(branch).bldg }}<br />{{ $any(branch).address }}
+          </p>
+          <p class="headquarter-box-text">{{ $any(branch).POBox }}</p>
+          <p class="headquarter-box-text">
+            {{ $any(branch).telephone }}<br />{{ $any(branch).fax }}
+          </p>
+          <p class="headquarter-box-text">{{ $any(branch).email }}</p>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="w-100 text-to-center">
+      <button class="view-all-branches-btn" (click)="toggle()">
+        <strong class="view-all-text" *ngIf="max!=branchesListLength">{{ "buttons.viewMoreBranches" | translate }}</strong>
+        <strong class="view-all-text" *ngIf="max==branchesListLength">{{ "buttons.viewLessBranches" | translate }}</strong>
+      
+      </button>
+    </div>
+  </section>
+  <section class="write-us-container">
+    <div class="write-us-space">
+      <h2 class="headquarter-title">
+        {{ "contact.writeUs" | translate }}
+      </h2>
+      <div class="write-us-content">
+        <div class="container">
+          <h6 class="write-us-element">{{ "contact.purpose" | translate }}*</h6>
+          <div class="row">
+            <div
+              class="col-12 col-xs-12 col-s-12 col-md-12 col-xl-12 col-lg-12 text-to-left"
+            >
+              <input
+                #purposeInput
+                type="text"
+                class="form-control write-us-dropdown"
+                id="purposeInput"
+                placeholder=""
+                name="purpose"
+              />
+              <div class="text-to-left">
+                <label class="write-us-hint">
+                  {{ "contact.rightChannel" | translate }}
+                </label>
+                <span class="tooltipContact">{{ "contact.rightChannel" | translate }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container w-100">
+          <h6 class="write-us-element">{{ "contact.name" | translate }}*</h6>
+          <div class="row">
+            <div
+              class="col-12 col-xs-12 col-s-12 col-md-6 col-xl-6 col-lg-12 text-to-left"
+            >
+              <input
+                #nameInput
+                type="text"
+                class="form-control write-us-textbox"
+                id="nameInput"
+                placeholder=""
+                name="name"
+              />
+              <div class="text-to-left">
+                <label class="write-us-hint">{{ "contact.firstName" | translate }}</label>
+              </div>
+            </div>
+            <div
+              class="col-12 col-xs-12 col-s-12 col-md-6 col-xl-6 col-lg-12 text-to-left"
+            >
+              <input
+                #lastNameInput
+                type="text"
+                class="form-control write-us-textbox"
+                id="lastNameInput"
+                placeholder=""
+                name="lastName"
+              />
+              <div class="text-to-left">
+                <label class="write-us-hint">{{ "contact.lastName" | translate }}</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div
+              class="col-12 col-xs-12 col-s-12 col-md-6 col-xl-6 col-lg-12 text-to-left"
+            >
+              <h6 class="write-us-element">{{ "contact.email" | translate }}*</h6>
+              <input
+                #emailInput
+                type="text"
+                class="form-control write-us-textbox"
+                id="emailInput"
+                placeholder=""
+                name="email"
+              />
+              <div class="text-to-left">
+                <label class="write-us-hint">{{ "contact.example" | translate }}</label>
+              </div>
+            </div>
+            <div
+              class="col-12 col-xs-12 col-s-12 col-md-6 col-xl-6 col-lg-12 text-to-left"
+            >
+              <h6 class="write-us-element">{{ "contact.phoneNumber" | translate }}*</h6>
+              <input
+                #phoneNumberInput
+                type="text"
+                class="form-control write-us-textbox"
+                id="phoneNumberInput"
+                placeholder=""
+                name="phoneNumber"
+              />
+              <div class="text-to-left">
+                <label class="write-us-hint">
+                  {{ "contact.countryCode" | translate }}
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div
+              class="col-12 col-xs-12 col-s-12 col-md-12 col-xl-12 col-lg-12 text-to-left"
+            >
+              <h6 class="write-us-element">{{ "contact.message" | translate }}*</h6>
+              <input
+                #emailInput
+                type="text"
+                class="form-control write-us-message"
+                id="messageInput"
+                placeholder=""
+                name="message"
+              />
+              <div class="text-to-left">
+                <label class="write-us-hint"
+                  >{{ "contact.exceed" | translate }}</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-100 text-to-center">
+          <button class="view-all-branches-btn1 yellow-background">
+            <strong class="view-all-text">{{ "buttons.submitMessage" | translate }}</strong>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

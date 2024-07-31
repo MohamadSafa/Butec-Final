@@ -1,0 +1,511 @@
+<form class="main-con">
+  <div>
+    <h1>{{ buttonName }} Project</h1>
+  </div>
+  <div class="row form-group mt-4">
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <label for="projectTitleInput">Title</label>
+      <input
+        #projectTitleInput
+        type="text"
+        class="form-control"
+        id="titleInput"
+        placeholder="Title"
+        [(ngModel)]="title"
+        name="projectTitle"
+      />
+      <!--<form [formGroup]="titleForm">
+        <div class="editor">
+          <ngx-editor-menu [editor]="titleEditor" [toolbar]="toolbar">
+          </ngx-editor-menu>
+          <ngx-editor
+            [editor]="titleEditor"
+            formControlName="titleEditorContent"
+            [(ngModel)]="title"
+          >
+          </ngx-editor>
+        </div>
+      </form>-->
+    </div>
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <label for="languageSelect">Language</label>
+      <select
+        class="form-control"
+        id="languageSelect"
+        [(ngModel)]="languageId"
+        name="languageSelect"
+        (change)="LanguageSelectionChange($event)"
+      >
+        <option
+          *ngIf="projectId == null"
+          value=""
+          selected="selected"
+          disabled="disabled"
+        >
+          Select Language
+        </option>
+        <option *ngFor="let language of languages" [value]="language.Id">
+          {{ language.title }}
+        </option>
+        <!-- <option value="3">French</option>
+        <option value="1">Arabic</option> -->
+      </select>
+    </div>
+  </div>
+  <div class="row form-group mt-4">
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <label for="typeOfContractInput">Area of Expertise</label>
+      <input
+        type="text"
+        class="form-control"
+        id="typeOfContractInput"
+        placeholder="Area of Expertise"
+        [(ngModel)]="typeOfContract"
+        name="typeOfContract"
+      />
+    </div>
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <label for="roleOfButec">Role of BUTEC</label>
+      <input
+        type="text"
+        class="form-control"
+        id="roleOfButecInput"
+        placeholder="Role of BUTEC"
+        [(ngModel)]="roleOfButec"
+        name="roleOfButec"
+      />
+    </div>
+  </div>
+  <div class="row form-group mt-4">
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <label for="contractorForProcess">Contractor for Process</label>
+      <input
+        type="text"
+        class="form-control"
+        id="contractorForProcessInput"
+        placeholder="Contractor for Process"
+        [(ngModel)]="contractorForProcess"
+        name="contractorForProcess"
+      />
+    </div>
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <label for="businessLineSelect">Business Line</label>
+      <select
+        class="form-control"
+        id="businessLineSelect"
+        [(ngModel)]="businessLineId"
+        name="businessLineId"
+        (change)="BusinessLineSelectionChange($event)"
+      >
+        <option value="" selected="selected" disabled="disabled">
+          Select Business Line
+        </option>
+        <option
+          *ngFor="let businessLine of businessLines"
+          [value]="businessLine.Id"
+        >
+          {{ businessLine.title }}
+        </option>
+        <!-- <option value="-1">Select Business Line</option>
+        <option value="1">General Contracting</option>
+        <option value="2">Electro-mechanical Contracting</option>
+        <option value="3">Hard and Soft Facility Management</option>
+        <option value="4">Utility Services</option> -->
+      </select>
+    </div>
+  </div>
+  <div class="row form-group mt-4">
+    <!--<div class="col-md-6">
+      <label for="sectorSelect">Sector</label>
+      <select
+        class="form-control"
+        id="sectorSelect"
+        (change)="SectorSelectionChange($event)"
+      >
+        <option value="-1">Select Sector</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+      </select>
+    </div>-->
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <label for="executionPeriodInput">Execution Period</label>
+      <input
+        type="text"
+        class="form-control"
+        id="executionPeriodInput"
+        placeholder="Execution Period"
+        [(ngModel)]="executionPeriod"
+        name="executionPeriod"
+      />
+    </div>
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <label for="financingInput">Financing</label>
+      <input
+        type="text"
+        class="form-control"
+        id="financingInput"
+        placeholder="Financing"
+        [(ngModel)]="financing"
+        name="financing"
+      />
+    </div>
+  </div>
+  <div class="row form-group mt-4">
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <label for="employerInput">Employer</label>
+      <input
+        type="text"
+        class="form-control"
+        id="employerInput"
+        placeholder="Employer"
+        [(ngModel)]="employer"
+        name="employer"
+      />
+    </div>
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <label for="delegatedEmployerInput">Delegated Employer</label>
+      <input
+        type="text"
+        class="form-control"
+        id="delegatedEmployerInput"
+        placeholder="Delegated Employer"
+        [(ngModel)]="delegatedEmployer"
+        name="delegatedEmployer"
+      />
+    </div>
+  </div>
+  <div class="row form-group mt-4">
+    <!--<div class="col-md-6">
+      <label for="ownerInput">Owner</label>
+      <input
+        type="text"
+        class="form-control"
+        id="ownerInput"
+        placeholder="Owner"
+        [(ngModel)]="owner"
+        name="owner"
+      />
+    </div>-->
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <label for="investorInput">Investor</label>
+      <input
+        type="text"
+        class="form-control"
+        id="investorInput"
+        placeholder="Investor"
+        [(ngModel)]="investor"
+        name="investor"
+      />
+    </div>
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <label for="consultantInput">Consultant</label>
+      <input
+        type="text"
+        class="form-control"
+        id="consultantInput"
+        placeholder="Consultant"
+        [(ngModel)]="consultant"
+        name="consultant"
+      />
+    </div>
+  </div>
+
+  <div class="row form-group mt-4">
+    <!--<div class="col-md-6">
+      <label for="ownerInput">Owner</label>
+      <input
+        type="text"
+        class="form-control"
+        id="ownerInput"
+        placeholder="Owner"
+        [(ngModel)]="owner"
+        name="owner"
+      />
+    </div>-->
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <label for="valueInput">Value</label>
+      <input
+        type="text"
+        class="form-control"
+        id="valueInput"
+        placeholder="Value"
+        [(ngModel)]="value"
+        name="value"
+      />
+    </div>
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <label for="yearInput">Year</label>
+      <input
+        type="text"
+        class="form-control"
+        id="yearInput"
+        placeholder="Year"
+        [(ngModel)]="year"
+        name="year"
+      />
+    </div>
+  </div>
+  <div class="row form-group mt-4">
+    <!--<div class="col-md-6">
+      <label for="ownerInput">Owner</label>
+      <input
+        type="text"
+        class="form-control"
+        id="ownerInput"
+        placeholder="Owner"
+        [(ngModel)]="owner"
+        name="owner"
+      />
+    </div>-->
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <label for="clientInput">Client</label>
+      <input
+        type="text"
+        class="form-control"
+        id="clientInput"
+        placeholder="Client"
+        [(ngModel)]="client"
+        name="client"
+      />
+    </div>
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <label for="ownerInput">Owner</label>
+      <input
+        type="text"
+        class="form-control"
+        id="ownerInput"
+        placeholder="Owner"
+        [(ngModel)]="owner"
+        name="owner"
+      />
+    </div>
+  </div>
+  <div class="row form-group mt-4">
+    <!--<div class="col-md-6">
+      <label for="ownerInput">Owner</label>
+      <input
+        type="text"
+        class="form-control"
+        id="ownerInput"
+        placeholder="Owner"
+        [(ngModel)]="owner"
+        name="owner"
+      />
+    </div>-->
+    <div class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <label for="locationSelect">Location</label>
+      <select
+        class="form-control"
+        id="locationSelect"
+        name="locationSelect"
+        [(ngModel)]="locationId"
+        (change)="LocationSelectionChange($event)"
+      >
+        <option
+          *ngIf="projectId == null"
+          value=""
+          selected="selected"
+          disabled="disabled"
+        >
+          Select Location
+        </option>
+        <option *ngFor="let location of locations" [value]="location.Id">
+          {{ location.title }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row form-group mt-4">
+    <div class="form-group">
+      <fieldset class="form-group">
+        <label>Project Main Image</label>
+        <!--{{ imageError }}-->
+        <div class="custom-file fileInputProfileWrap">
+          <input
+            type="file"
+            (change)="OnFileChange($event)"
+            class="fileInputProfile form-control"
+          />
+          <div class="img-space mt-2" id="image">
+            <ng-container *ngIf="isImageSaved; else elseTemplate">
+              <img
+                class="imagesize img-responsive"
+                id="chosenImage"
+                alt="No Image"
+                [src]="cardImageBase64"
+              />
+            </ng-container>
+            <ng-template #elseTemplate>
+              <img
+                *ngIf="projectId == null || image == null || image == ''"
+                src="./../../assets/img/image_placeholder.png"
+                class="imagesize img-responsive"
+                alt="No Image"
+              />
+              <img
+                *ngIf="projectId != null && image != null && image != ''"
+                src="{{ image }}"
+                class="imagesize img-responsive"
+                alt="No Image"
+              />
+            </ng-template>
+          </div>
+        </div>
+      </fieldset>
+      <!--<label for="imageInput">Project Image</label>&nbsp;
+      <input
+        type="file"
+        class="form-control-file"
+        id="imageInput"
+        (change)="OnFileChange($event)"
+      />&nbsp;-->
+    </div>
+  </div>
+
+  <div class="row form-group mt-4">
+    <div class="form-group">
+      <fieldset class="form-group">
+        <label>Mobile Image</label>
+        <!--{{ imageError }}-->
+        <div class="custom-file fileInputProfileWrap">
+          <input
+            type="file"
+            (change)="OnMobileFileChange($event)"
+            class="fileInputProfile form-control"
+          />
+          <div class="img-space mt-2" id="mobileImage">
+            <ng-container *ngIf="isMobileImageSaved; else elseMobileTemplate">
+              <img
+                class="imagesize img-responsive"
+                id="chosenImage"
+                alt="No Image"
+                [src]="mobileImageBase64"
+              />
+            </ng-container>
+            <ng-template #elseMobileTemplate>
+              <img
+                *ngIf="
+                  projectId == null || mobileImage == null || mobileImage == ''
+                "
+                src="./../../assets/img/image_placeholder.png"
+                class="imagesize img-responsive"
+                alt="No Image"
+              />
+              <img
+                *ngIf="
+                  projectId != null && mobileImage != null && mobileImage != ''
+                "
+                src="{{ mobileImage }}"
+                class="imagesize img-responsive"
+                alt="No Image"
+              />
+            </ng-template>
+          </div>
+        </div>
+      </fieldset>
+      <!--<label for="imageInput">Project Image</label>&nbsp;
+        <input
+          type="file"
+          class="form-control-file"
+          id="imageInput"
+          (change)="OnFileChange($event)"
+        />&nbsp;-->
+    </div>
+  </div>
+
+  <div class="row form-group mt-4">
+    <div
+      class="custom-dropzone"
+      ngx-dropzone
+      [expandable]="true"
+      [accept]="'image/*'"
+      (change)="onSelect($event)"
+    >
+      <ngx-dropzone-label>
+        <div>
+          <h2>Projects Sub Images</h2>
+        </div>
+      </ngx-dropzone-label>
+      <ngx-dropzone-image-preview
+        ngProjectAs="ngx-dropzone-preview"
+        *ngFor="let f of files"
+        [file]="f"
+        [removable]="true"
+        (removed)="onRemove(f)"
+      >
+        <ngx-dropzone-label *ngIf="projectId == null"
+          >{{ f.name }} ({{ f.type }})</ngx-dropzone-label
+        >
+      </ngx-dropzone-image-preview>
+    </div>
+  </div>
+
+  <div class="row form-group mt-4">
+    <div
+      class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
+    >
+      <label for="descriptionTxtArea">Descriprion</label>
+      <!--<textarea
+        class="form-control"
+        id="descriptionTxtArea"
+        rows="5"
+        [(ngModel)]="description"
+        name="description"
+      ></textarea>-->
+      <form [formGroup]="paragraph1Form">
+        <div class="editor">
+          <ngx-editor-menu [editor]="paragraph1Editor" [toolbar]="toolbar">
+          </ngx-editor-menu>
+          <ngx-editor
+            [editor]="paragraph1Editor"
+            formControlName="paragraph1EditorContent"
+            [(ngModel)]="paragraph1"
+          >
+          </ngx-editor>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!--<div class="row form-group mt-4">
+    <div class="col-md-12">
+      <label for="notesTxtArea">Notes</label>
+      <textarea
+        class="form-control"
+        id="notesTxtArea"
+        rows="5"
+        [(ngModel)]="notes"
+        name="notes"
+      ></textarea>
+    </div>
+  </div>-->
+  <div class="row form-group mt-4">
+    <div class="m-t-20 text-center">
+      <a
+        class="btn btn-primary btn-lg"
+        (click)="AddEditProject()"
+        href="javascript:void(0)"
+        >{{ buttonName }} Project</a
+      >
+    </div>
+  </div>
+  <!--<div class="form-group">
+    <label for="exampleFormControlSelect2">Example multiple select</label>
+    <select multiple class="form-control" id="exampleFormControlSelect2">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">textarea</label>
+    <textarea
+      class="form-control"
+      id="exampleFormControlTextarea1"
+      rows="3"
+    ></textarea>
+  </div>-->
+</form>

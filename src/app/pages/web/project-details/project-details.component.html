@@ -1,0 +1,349 @@
+<section class="multi-details-header-container">
+  <div class="details-header-content">
+    <div *ngIf="expertiseId == 1" class="details-header-body red-left-border">
+      <a class="detials-header-title move-left-15"
+        ><img
+          src="./assets/icons/back-arrow.svg"
+          alt="join image"
+          class="ic_arrow"
+          (click)="GoBack()"
+        />
+        <span class="detials-header-title"><strong>{{ "projectDetails.projects" | translate }}</strong></span></a
+      >
+      <div class="margin-bottom-16">
+        <span class="details-header-subtitle">
+          {{ projectTitle }}
+        </span>
+      </div>
+      <div>
+        <img
+          src="./assets/icons/engineering_contracting_red.svg"
+          alt="Business Line image"
+          class="details-header-icon"
+        />
+      </div>
+    </div>
+    <div
+      *ngIf="expertiseId == 2"
+      class="details-header-body cerulean-left-border"
+    >
+      <a class="detials-header-title move-left-15"
+        ><img
+          src="./assets/icons/back-arrow.svg"
+          alt="join image"
+          class="ic_arrow"
+          (click)="GoBack()"
+        />
+        <span class="detials-header-title"><strong>{{ "projectDetails.projects" | translate }}</strong></span></a
+      >
+      <div class="margin-bottom-16">
+        <span class="details-header-subtitle">
+          {{ projectTitle }}
+        </span>
+      </div>
+      <div>
+        <img
+          src="./assets/icons/electro_mechincal_cerulean.svg"
+          alt="Business Line image"
+          class="details-header-icon"
+        />
+      </div>
+    </div>
+    <div *ngIf="expertiseId == 3" class="details-header-body teal-left-border">
+      <a class="detials-header-title move-left-15"
+        ><img
+          src="./assets/icons/back-arrow.svg"
+          alt="join image"
+          class="ic_arrow"
+          (click)="GoBack()"
+        />
+        <span class="detials-header-title"><strong>PROJECTS</strong></span></a
+      >
+      <div class="margin-bottom-16">
+        <span class="details-header-subtitle">
+          {{ projectTitle }}
+        </span>
+      </div>
+      <div>
+        <img
+          src="./assets/icons/facility_services_teal.svg"
+          alt="Business Line image"
+          class="details-header-icon"
+        />
+      </div>
+    </div>
+    <div *ngIf="expertiseId == 4" class="details-header-body green-left-border">
+      <a class="detials-header-title move-left-15"
+        ><img
+          src="./assets/icons/back-arrow.svg"
+          alt="join image"
+          class="ic_arrow"
+          (click)="GoBack()"
+        />
+        <span class="detials-header-title"><strong>{{ "projectDetails.projects" | translate }}</strong></span></a
+      >
+      <div class="margin-bottom-16">
+        <span class="details-header-subtitle">
+          {{ projectTitle }}
+        </span>
+      </div>
+      <div>
+        <img
+          src="./assets/icons/new icon for Utility Services.jpg"
+          alt="Business Line image"
+          class="details-header-icon"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="details-header-img-container">
+    <img
+      src="{{ image }}"
+      alt="Project Main image"
+      class="details-header-img img-fluid"
+    />
+  </div>
+</section>
+
+<section class="page-text-container">
+  <div class="page-text-body">
+    <p
+      class="page-paragraph-desc page-paragraph-safa2 margin-bottom-64 line-height-1"
+      [innerHTML]="description"
+    ></p>
+  </div>
+</section>
+
+<section class="page-text-container page-text-container-safa">
+  <div class="page-row-body">
+    <div class="container">
+      <div class="row">
+        <div
+          *ngIf="typeOfContract != ''"
+          class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"
+        >
+          <span class="details-info-title">{{ "projectDetails.areaOfExpertise" | translate }}</span><br />
+          <div class="details-info-space">
+            <span class="details-info-subtitle">{{ typeOfContract }}</span>
+          </div>
+        </div>
+        <div
+          *ngIf="roleOfButec != ''"
+          class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"
+        >
+          <span class="details-info-title">{{ "projectDetails.roleOfButec" | translate }}</span><br />
+          <div class="details-info-space">
+            <span class="details-info-subtitle">{{ roleOfButec }}</span>
+          </div>
+        </div>
+        <div
+          *ngIf="contractorForProcess != ''"
+          class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"
+        >
+          <span class="details-info-title">{{ "projectDetails.contractorForProcess" | translate }}</span><br />
+          <div class="details-info-space">
+            <span class="details-info-subtitle">{{
+              contractorForProcess
+            }}</span>
+          </div>
+        </div>
+        <div
+          *ngIf="executionPeriod != ''"
+          class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"
+        >
+          <span class="details-info-title">{{ "projectDetails.executionPeriod" | translate }}</span><br />
+          <div class="details-info-space">
+            <span class="details-info-subtitle">{{ executionPeriod }}</span>
+          </div>
+        </div>
+        <div
+          *ngIf="financing != ''"
+          class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"
+        >
+          <span class="details-info-title">{{ "projectDetails.financing" | translate }}</span><br />
+          <div class="details-info-space">
+            <span class="details-info-subtitle">{{ financing }}</span>
+          </div>
+        </div>
+        <div
+          *ngIf="employer != ''"
+          class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"
+        >
+          <span class="details-info-title">{{ "projectDetails.employer" | translate }}</span><br />
+          <div class="details-info-space">
+            <span class="details-info-subtitle">{{ employer }}</span>
+          </div>
+        </div>
+        <div
+          *ngIf="delegatedEmployer != ''"
+          class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"
+        >
+          <span class="details-info-title">{{ "projectDetails.delgatedEmployer" | translate }}</span><br />
+          <div class="details-info-space-last details-info-space-media">
+            <span class="details-info-subtitle">{{ delegatedEmployer }}</span>
+          </div>
+        </div>
+        <div
+          *ngIf="location != ''"
+          class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"
+        >
+          <span class="details-info-title">{{ "projectDetails.location" | translate }}</span><br />
+          <div class="details-info-space-last">
+            <span class="details-info-subtitle">{{ location }}</span>
+          </div>
+        </div>
+        <div
+          *ngIf="year != ''"
+          class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"
+        >
+          <span class="details-info-title">{{ "projectDetails.year" | translate }}</span><br />
+          <div class="details-info-space-last details-info-space-media">
+            <span class="details-info-subtitle">{{ year }}</span>
+          </div>
+        </div>
+        <div
+          *ngIf="investor != ''"
+          class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"
+        >
+          <span class="details-info-title">{{ "projectDetails.investor" | translate }}</span><br />
+          <div class="details-info-space-last">
+            <span class="details-info-subtitle">{{ investor }}</span>
+          </div>
+        </div>
+        <div
+          *ngIf="consultant != ''"
+          class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"
+        >
+          <span class="details-info-title">{{ "projectDetails.consultant" | translate }}</span><br />
+          <div class="details-info-space-last details-info-space-media">
+            <span class="details-info-subtitle">{{ consultant }}</span>
+          </div>
+        </div>
+        <div
+          *ngIf="value != ''"
+          class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"
+        >
+          <span class="details-info-title">{{ "projectDetails.value" | translate }}</span><br />
+          <div class="details-info-space-last">
+            <span class="details-info-subtitle">{{ value }}</span>
+          </div>
+        </div>
+        <div
+          *ngIf="client != ''"
+          class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"
+        >
+          <span class="details-info-title">{{ "projectDetails.client" | translate }}</span><br />
+          <div class="details-info-space-last">
+            <span class="details-info-subtitle">{{ client }}</span>
+          </div>
+        </div>
+        <div
+          *ngIf="owner != ''"
+          class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"
+        >
+          <span class="details-info-title">{{ "projectDetails.owner" | translate }}</span><br />
+          <div class="details-info-space-last">
+            <span class="details-info-subtitle">{{ owner }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-text-container page-text-container-safa">
+  <div class="page-row-body">
+    <div class="container">
+      <div class="row">
+        <div
+          *ngFor="let attachment of attachmentsList"
+          class="col-6 col-xs-6 col-s-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 details-img-container"
+        >
+          <img
+            src="{{ imageUrl }}{{ attachment.Name }}"
+            alt="Business Line image"
+            class="details-img img-fluid"
+            data-bs-toggle="modal"
+            data-bs-target="#imageModal"
+            (click)="OpenImage(attachment.Name)"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="other-container">
+  <h2 class="other-title">{{ "projectDetails.otherProjects" | translate }}</h2>
+  <div class="other-imgs-container">
+    <div class="container container-to-center">
+      <div class="row">
+        <div
+          *ngFor="let project of otherProjects"
+          class="col-12 col-xs-12 col-s-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 other-img-body other-img-space"
+          (click)="GoToProjectDetails(project.EntityId, project.CategoryId)"
+          style="display: grid"
+        >
+          <img
+            *ngIf="project.CategoryId == 1"
+            src="./assets/icons/engineering_contracting_white.svg"
+            alt="Business Line icon"
+            class="projects-icon-oth other-mini-icon-oth red-background other-projects-hover"
+          />
+
+          <img
+            *ngIf="project.CategoryId == 2"
+            src="./assets/icons/electro_mechincal_white.svg"
+            alt="Business Line icon"
+            class="projects-icon-oth other-mini-icon-oth cerulean-background other-projects-hover"
+          />
+          <img
+            *ngIf="project.CategoryId == 3"
+            src="./assets/icons/facility_services_white.svg"
+            alt="Business Line icon"
+            class="projects-icon-oth other-mini-icon-oth teal-background other-projects-hover"
+          />
+          <img
+            *ngIf="project.CategoryId == 4"
+            src="./assets/icons/Utility-Services-Green.svg"
+            alt="Business Line icon"
+            class="projects-icon-oth other-mini-icon-oth green-background"
+            style="height:49px"
+          />
+          <img
+            src="{{ imageUrl }}{{ project.MobileImage }}"
+            alt="Business Line image"
+            class="other-img"
+          />
+          <div class="other-info-container">
+            <h6 class="other-info-title">
+              {{ project.Title }}
+            </h6>
+            <p class="other-info-text">{{ project.Location }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Large modal -->
+<section>
+  <div
+    class="modal fade bd-example-modal-xl"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="myLargeModalLabel"
+    aria-hidden="true"
+    id="imageModal"
+  >
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content" style="background-color: transparent">
+        <img
+          src="{{ modalImageUrl }}"
+          alt="Business Line image"
+          class="projects-images img-fluid h-50"
+        />
+      </div>
+    </div>
+  </div>
+</section>

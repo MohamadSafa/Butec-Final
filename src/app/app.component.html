@@ -1,0 +1,33 @@
+<!-- main content -->
+<div class="app-wrapper" #topScrollAnchor>
+  <app-loading *ngIf="isLoading"></app-loading>
+  
+  <app-header *ngIf="isHeaderFooterIncluded == false"></app-header>
+  <!-- <router-outlet></router-outlet> -->
+  <app-chat *ngIf="isHeaderFooterIncluded == false"></app-chat>
+  <router-outlet (deactivate)="onDeactivate()" (activate)="onNavigate($event)"></router-outlet>
+  <app-footer *ngIf="isHeaderFooterIncluded == false"></app-footer>
+ 
+
+  <!-- <div>
+    <button (click)="showSuccess()">Show Success Message</button>
+    <button (click)="showError()">Show Error Message</button>
+    <button (click)="confirmDelete()">Delete Project</button>
+  </div>
+  <fa-icon [icon]="faCheckCircle"></fa-icon>
+  <fa-icon [icon]="faTimesCircle"></fa-icon>
+  
+  <app-confirmation-dialog></app-confirmation-dialog> -->
+  
+  
+</div>
+
+
+
+<!-- <div class="main-content" [ngStyle]="responsiveContent">
+
+</div> -->
+
+
+
+<!-- main content -->
